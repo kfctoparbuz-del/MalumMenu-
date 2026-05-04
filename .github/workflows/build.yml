@@ -25,6 +25,40 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
+      - name: Find DLL
+        run: find . -name "*.dll" -path "*/Release/*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MalumMenu
+          path: src/bin/Release/net6.0/MalumMenu.dllname: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
