@@ -35,59 +35,59 @@ public class ESPTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.seePlayerInfo = GUILayout.Toggle(CheatToggles.seePlayerInfo, " See Player Info");
+        CheatToggles.seePlayerInfo = GUILayout.Toggle(CheatToggles.seePlayerInfo, " Видеть информацию об игроке");
 
-        CheatToggles.seeRoles = GUILayout.Toggle(CheatToggles.seeRoles, " See Roles");
+        CheatToggles.seeRoles = GUILayout.Toggle(CheatToggles.seeRoles, " Видеть роли");
 
-        CheatToggles.seeGhosts = GUILayout.Toggle(CheatToggles.seeGhosts, " See Ghosts");
+        CheatToggles.seeGhosts = GUILayout.Toggle(CheatToggles.seeGhosts, " Видеть призраков");
 
-        CheatToggles.noShadows = GUILayout.Toggle(CheatToggles.noShadows, " No Shadows");
+        CheatToggles.noShadows = GUILayout.Toggle(CheatToggles.noShadows, " Без теней");
 
-        CheatToggles.taskArrows = GUILayout.Toggle(CheatToggles.taskArrows, " Task Arrows");
+        CheatToggles.taskArrows = GUILayout.Toggle(CheatToggles.taskArrows, " Стрелки к задачам");
 
-        CheatToggles.revealVotes = GUILayout.Toggle(CheatToggles.revealVotes, " Reveal Votes");
+        CheatToggles.revealVotes = GUILayout.Toggle(CheatToggles.revealVotes, " Раскрывать голоса");
 
-        CheatToggles.seeLobbyInfo = GUILayout.Toggle(CheatToggles.seeLobbyInfo, " See Lobby Info");
+        CheatToggles.seeLobbyInfo = GUILayout.Toggle(CheatToggles.seeLobbyInfo, " Видеть информацию лобби");
     }
 
     private void DrawCamera()
     {
-        GUILayout.Label("Camera", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Камера", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.zoomOut = GUILayout.Toggle(CheatToggles.zoomOut, " Zoom Out");
+        CheatToggles.zoomOut = GUILayout.Toggle(CheatToggles.zoomOut, " Отдалить");
 
-        CheatToggles.spectate = GUILayout.Toggle(CheatToggles.spectate, " Spectate");
+        CheatToggles.spectate = GUILayout.Toggle(CheatToggles.spectate, " Наблюдение");
 
-        CheatToggles.freecam = GUILayout.Toggle(CheatToggles.freecam, " Freecam");
+        CheatToggles.freecam = GUILayout.Toggle(CheatToggles.freecam, " Свободная камера");
     }
 
     private void DrawTracers()
     {
-        GUILayout.Label("Tracers", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Трассеры", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.tracersCrew = GUILayout.Toggle(CheatToggles.tracersCrew, " Crewmates");
+        CheatToggles.tracersCrew = GUILayout.Toggle(CheatToggles.tracersCrew, " Члены экипажа");
 
-        CheatToggles.tracersImps = GUILayout.Toggle(CheatToggles.tracersImps, " Impostors");
+        CheatToggles.tracersImps = GUILayout.Toggle(CheatToggles.tracersImps, " Самозванцы");
 
-        CheatToggles.tracersGhosts = GUILayout.Toggle(CheatToggles.tracersGhosts, " Ghosts");
+        CheatToggles.tracersGhosts = GUILayout.Toggle(CheatToggles.tracersGhosts, " Призраки");
 
-        CheatToggles.tracersBodies = GUILayout.Toggle(CheatToggles.tracersBodies, " Dead Bodies");
+        CheatToggles.tracersBodies = GUILayout.Toggle(CheatToggles.tracersBodies, " Трупы");
 
-        CheatToggles.colorBasedTracers = GUILayout.Toggle(CheatToggles.colorBasedTracers, " Color-based");
+        CheatToggles.colorBasedTracers = GUILayout.Toggle(CheatToggles.colorBasedTracers, " По цвету");
 
-        CheatToggles.distanceBasedTracers = GUILayout.Toggle(CheatToggles.distanceBasedTracers, " Distance-based");
+        CheatToggles.distanceBasedTracers = GUILayout.Toggle(CheatToggles.distanceBasedTracers, " По расстоянию");
     }
 
     private void DrawMinimap()
     {
-        GUILayout.Label("Minimap", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Мини-карта", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.mapCrew = GUILayout.Toggle(CheatToggles.mapCrew, " Crewmates");
+        CheatToggles.mapCrew = GUILayout.Toggle(CheatToggles.mapCrew, " Члены экипажа");
 
-        CheatToggles.mapImps = GUILayout.Toggle(CheatToggles.mapImps, " Impostors");
+        CheatToggles.mapImps = GUILayout.Toggle(CheatToggles.mapImps, " Самозванцы");
 
-        CheatToggles.mapGhosts = GUILayout.Toggle(CheatToggles.mapGhosts, " Ghosts");
+        CheatToggles.mapGhosts = GUILayout.Toggle(CheatToggles.mapGhosts, " Призраки");
 
-        CheatToggles.colorBasedMap = GUILayout.Toggle(CheatToggles.colorBasedMap, " Color-based");
+        CheatToggles.colorBasedMap = GUILayout.Toggle(CheatToggles.colorBasedMap, " По цвету");
     }
 }
