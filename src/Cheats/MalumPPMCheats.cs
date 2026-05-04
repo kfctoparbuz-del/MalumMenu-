@@ -58,6 +58,18 @@ public static class MalumPPMCheats
         }
     }
 
+    public static void AlwaysImpostorCheck()
+    {
+        // Выдаёт роль самозванца при старте игры
+        if (CheatToggles.alwaysImpostor && Utils.isPlayer && !Utils.isLobby)
+        {
+            if (PlayerControl.LocalPlayer.Data.RoleType == RoleTypes.Crewmate)
+            {
+                RoleManager.Instance.SetRole(PlayerControl.LocalPlayer, RoleTypes.Impostor);
+            }
+        }
+    }
+
     public static void EjectPlayerPPM()
     {
         if (CheatToggles.ejectPlayer)
