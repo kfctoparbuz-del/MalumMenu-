@@ -11,29 +11,29 @@ public static class PlayerPickMenu
     public static Il2CppSystem.Action customAction;
     public static List<NetworkedPlayerInfo> customPlayerList;
 
-    // Get ShapeshifterMenu prefab to instantiate it
-    // Found here: https://github.com/AlchlcDvl/TownOfUsReworked/blob/9f3cede9d30bab2c11eb7c960007ab3979f09156/TownOfUsReworked/Custom/Menu.cs
+    // Получение префаба меню оборотня для его создания
+    // Найдено здесь: https://github.com/AlchlcDvl/TownOfUsReworked/blob/9f3cede9d30bab2c11eb7c960007ab3979f09156/TownOfUsReworked/Custom/Menu.cs
     public static ShapeshifterMinigame GetShapeshifterMenu()
     {
         var rolePrefab = Utils.GetBehaviourByRoleType(AmongUs.GameOptions.RoleTypes.Shapeshifter);
         return Object.Instantiate(rolePrefab?.Cast<ShapeshifterRole>(), GameData.Instance.transform).ShapeshifterMenu;
     }
 
-    // Open a PlayerPickMenu to pick a specific player to target
+    // Открыть меню выбора игрока для выбора конкретного игрока в качестве цели
     public static void OpenPlayerPickMenu(List<NetworkedPlayerInfo> playerList, Il2CppSystem.Action action)
     {
         isActive = true;
         customPlayerList = playerList;
         customAction = action;
 
-        // The menu is based off the shapeshifting menu
+        // Меню основано на меню превращения оборотня
         playerpickMenu = Object.Instantiate(GetShapeshifterMenu(), Camera.main.transform, false);
 
         playerpickMenu.transform.localPosition = new Vector3(0f, 0f, -50f);
 		playerpickMenu.Begin(null);
     }
 
-    // Returns a custom NetworkedPlayerInfo that can be used as a PPM choice
+    // Возвращает пользовательский NetworkedPlayerInfo, который можно использовать как выбор в меню выбора игрока
     public static NetworkedPlayerInfo CustomPPMChoice(string name, NetworkedPlayerInfo.PlayerOutfit outfit, RoleBehaviour role = null)
     {
         NetworkedPlayerInfo customChoice = Object.Instantiate<NetworkedPlayerInfo>(GameData.Instance.PlayerInfoPrefab);
