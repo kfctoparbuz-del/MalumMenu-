@@ -9,9 +9,9 @@ public static class AmongUsClient_Update
     {
         MalumSpoof.SpoofLevel();
 
-        // GuestMode cheats are commented out as they are broken in latest updates
+        // Читы GuestMode закомментированы, так как они сломаны в последних обновлениях
 
-        // Code to treat temp accounts the same as full accounts, including access to friend codes
+        // Код для обработки временных аккаунтов так же, как и полных, включая доступ к кодам друзей
         // if (!EOSManager.Instance.loginFlowFinished || !MalumMenu.guestMode.Value) return;
         // DataManager.Player.Account.LoginStatus = EOSManager.AccountLoginStatus.LoggedIn;
 
@@ -27,7 +27,7 @@ public static class AmongUsClient_Update
 [HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.OnGameJoined))]
 public static class AmongUsClient_OnGameJoined
 {
-    // Postfix patch of AmongUsClient.OnGameJoined to store the last joined game ID string
+    // Постфикс-патч AmongUsClient.OnGameJoined для сохранения строки ID последней присоединённой игры
     public static string lastGameIdString = "";
 
     public static void Postfix(string gameIdString)
