@@ -18,7 +18,8 @@ public static class MalumPPMCheats
     private static bool _setFakeAliveActive;
     private static bool _forceRoleActive;
     private static RoleTypes? _oldRole = null;
-
+    private static bool _alwaysImpostorTriggered = false;
+    
     public static void ReportBodyPPM()
     {
         if (CheatToggles.reportBody)
