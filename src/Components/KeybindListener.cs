@@ -8,10 +8,10 @@ public class KeybindListener : MonoBehaviour
     {
         if (MalumMenu.isPanicked) return;
 
-        // Keybinds aren't triggered from typing in the chat
+        // Привязки клавиш не срабатывают при вводе текста в чате
         if (HudManager.InstanceExists && HudManager.Instance.Chat && HudManager.Instance.Chat.IsOpenOrOpening) return;
 
-        // Check each keybind to see if the user pressed it and toggle the corresponding cheat
+        // Проверка каждой привязки клавиш, нажал ли пользователь её, и переключение соответствующего чита
         foreach (var (name, key) in CheatToggles.Keybinds)
         {
             if (key == KeyCode.None) continue;
