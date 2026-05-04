@@ -420,7 +420,7 @@ public static class MalumPPMCheats
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Гадюка", OutfitPreset.Viper, Utils.GetBehaviourByRoleType(RoleTypes.Viper)));
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Самозванец", OutfitPreset.Impostor, Utils.GetBehaviourByRoleType(RoleTypes.Impostor)));
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Следопыт", OutfitPreset.Tracker, Utils.GetBehaviourByRoleType(RoleTypes.Tracker)));
-                playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Шумодел", OutfitPreset.Noisemaker, Utils.GetBehaviourByRoleType(RoleTypes.Noisemaker)));
+                playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Паникёр", OutfitPreset.Noisemaker, Utils.GetBehaviourByRoleType(RoleTypes.Noisemaker)));
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Инженер", OutfitPreset.Engineer, Utils.GetBehaviourByRoleType(RoleTypes.Engineer)));
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Учёный", OutfitPreset.Scientist, Utils.GetBehaviourByRoleType(RoleTypes.Scientist)));
                 playerDataList.Add(PlayerPickMenu.CustomPPMChoice("Детектив", OutfitPreset.Detective, Utils.GetBehaviourByRoleType(RoleTypes.Detective)));
