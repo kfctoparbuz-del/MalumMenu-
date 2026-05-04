@@ -173,12 +173,12 @@ public static class PingTracker_Update
         {
             __instance.aspectPosition.DistanceFromEdge = new Vector3(-0.21f, 0.50f, 0f);
 
-            __instance.text.text = $"MalumMenu от scp222thj & Astral ~ {pingText}";
+            __instance.text.text = $"MalumMenu на Русском от Ernestrum ~ {pingText}";
 
             return;
         }
 
-        __instance.text.text = $"MalumMenu от scp222thj & Astral\n{pingText}";
+        __instance.text.text = $"MalumMenu на Русском от Ernestrum\n{pingText}";
 
     }
 }
