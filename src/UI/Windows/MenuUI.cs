@@ -39,10 +39,12 @@ public class MenuUI : MonoBehaviour
             windowHeight
         );
     }
-
     public void InitStyles()
     {
         GUI.skin.toggle.fontSize = GUI.skin.button.fontSize = GUI.skin.label.fontSize = 15;
+        GUI.skin.toggle.fontStyle = GUI.skin.button.fontStyle = GUI.skin.label.fontStyle = FontStyle.Bold;
+        GUI.skin.window.fontStyle = FontStyle.Bold;
+        GUI.skin.box.fontStyle = FontStyle.Bold;
     }
 
     private void Update()
