@@ -43,7 +43,7 @@ public class HostOnlyTab : ITab
 
         CheatToggles.showProtectMenu = GUILayout.Toggle(CheatToggles.showProtectMenu, " Показать меню защиты");
 
-        // CheatToggles.forceRole = GUILayout.Toggle(CheatToggles.forceRole, " Принудительная роль");
+        CheatToggles.forceRole = GUILayout.Toggle(CheatToggles.forceRole, " Принудительная роль");
 
         // CheatToggles.noOptionsLimits = GUILayout.Toggle(CheatToggles.noOptionsLimits, " Без ограничений опций");
     }
