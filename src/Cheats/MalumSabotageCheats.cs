@@ -14,7 +14,7 @@ public static class MalumSabotageCheats
         {
             case 2:
             {
-                // Polus uses SystemTypes.Laboratory instead of SystemTypes.Reactor
+                // Polus использует SystemTypes.Laboratory вместо SystemTypes.Reactor
 
                 var labSys = shipStatus.Systems[SystemTypes.Laboratory].Cast<ReactorSystemType>();
 
@@ -29,7 +29,7 @@ public static class MalumSabotageCheats
             }
             case 4:
             {
-                // Airship uses HeliSabotageSystem to sabotage reactor
+                // Airship использует HeliSabotageSystem для саботажа реактора
 
                 var heliSys = shipStatus.Systems[SystemTypes.HeliSabotage].Cast<HeliSabotageSystem>();
 
@@ -37,12 +37,12 @@ public static class MalumSabotageCheats
                 {
                     if (_reactorSab)
                     {
-                        shipStatus.RpcUpdateSystem(SystemTypes.HeliSabotage, 16 | 0); // Repair
+                        shipStatus.RpcUpdateSystem(SystemTypes.HeliSabotage, 16 | 0); // Починить
                         shipStatus.RpcUpdateSystem(SystemTypes.HeliSabotage, 16 | 1);
                     }
                     else
                     {
-                        shipStatus.RpcUpdateSystem(SystemTypes.HeliSabotage, 128); // Sabotage
+                        shipStatus.RpcUpdateSystem(SystemTypes.HeliSabotage, 128); // Саботировать
                     }
 
                     _reactorSab = CheatToggles.reactorSab;
@@ -53,7 +53,7 @@ public static class MalumSabotageCheats
             }
             default:
             {
-                // Other maps behave normally
+                // Другие карты ведут себя нормально
 
                 var reactorSys = shipStatus.Systems[SystemTypes.Reactor].Cast<ReactorSystemType>();
 
@@ -71,7 +71,7 @@ public static class MalumSabotageCheats
 
     public static void HandleOxygen(ShipStatus shipStatus, byte mapId)
     {
-        if (mapId != 4 && mapId != 2 && mapId != 5) { // Maps without Oxygen system: Airship, MiraHQ, Fungle
+        if (mapId != 4 && mapId != 2 && mapId != 5) { // Карты без системы кислорода: Airship, MiraHQ, Fungle
 
             var oxygenSys = shipStatus.Systems[SystemTypes.LifeSupp].Cast<LifeSuppSystemType>();
 
@@ -87,15 +87,15 @@ public static class MalumSabotageCheats
 
         }
 
-        // Notify the player if they try to activate the cheat in a map without an oxygen system
+        // Уведомить игрока, если он пытается активировать чит на карте без системы кислорода
         if (!CheatToggles.oxygenSab) return;
-        HudManager.Instance.Notifier.AddDisconnectMessage("Oxygen system not present on this map");
+        HudManager.Instance.Notifier.AddDisconnectMessage("Система кислорода отсутствует на этой карте");
         CheatToggles.oxygenSab = false;
     }
 
     public static void HandleComms(ShipStatus shipStatus, byte mapId)
     {
-        if (mapId is 1 or 5) // Fungle & Skeld use HqHudSystemType instead of HudOverrideSystemType
+        if (mapId is 1 or 5) // Fungle и Skeld используют HqHudSystemType вместо HudOverrideSystemType
         {
 
             var hqCommsSys = shipStatus.Systems[SystemTypes.Comms].Cast<HqHudSystemType>();
@@ -105,12 +105,12 @@ public static class MalumSabotageCheats
 
                 if (_commsSab)
                 {
-                    shipStatus.RpcUpdateSystem(SystemTypes.Comms, 16 | 0); // Repair
+                    shipStatus.RpcUpdateSystem(SystemTypes.Comms, 16 | 0); // Починить
                     shipStatus.RpcUpdateSystem(SystemTypes.Comms, 16 | 1);
                 }
                 else
                 {
-                    shipStatus.RpcUpdateSystem(SystemTypes.Comms, 128); // Sabotage
+                    shipStatus.RpcUpdateSystem(SystemTypes.Comms, 128); // Саботировать
                 }
 
                 _commsSab = CheatToggles.commsSab;
@@ -120,7 +120,7 @@ public static class MalumSabotageCheats
             CheatToggles.commsSab = _commsSab = hqCommsSys.IsActive;
 
         }
-        else // Other maps behave normally
+        else // Другие карты ведут себя нормально
         {
 
             var commsSys = shipStatus.Systems[SystemTypes.Comms].Cast<HudOverrideSystemType>();
@@ -138,17 +138,17 @@ public static class MalumSabotageCheats
 
     public static void HandleElectrical(ShipStatus shipStatus, byte mapId)
     {
-        if (mapId != 5) // Fungle has no electrical system
+        if (mapId != 5) // На Fungle нет электрической системы
         {
 
             var elecSys = shipStatus.Systems[SystemTypes.Electrical].Cast<SwitchSystem>();
 
-            // Handle unfixableLights cheat first to avoid the cheats messing with each other
+            // Сначала обработать чит unfixableLights, чтобы читы не мешали друг другу
             HandleUnfixLights(shipStatus);
 
             if (CheatToggles.elecSab != _elecSab)
             {
-                if (_elecSab)   // Repair
+                if (_elecSab)   // Починить
                 {
                     for (var i = 0; i < 5; i++)
                     {
@@ -161,9 +161,9 @@ public static class MalumSabotageCheats
                     }
 
                 }
-                else // Sabotage
+                else // Саботировать
                 {
-                    CheatToggles.unfixableLights = false; // Replace unfixableLights cheat if it is already active
+                    CheatToggles.unfixableLights = false; // Заменить чит unfixableLights, если он уже активен
 
                     byte b = 4;
                     for (var i = 0; i < 5; i++)
@@ -186,10 +186,10 @@ public static class MalumSabotageCheats
 
         }
 
-        // Notify the player if they try to activate the cheat in a map without an eletrical system
+        // Уведомить игрока, если он пытается активировать чит на карте без электрической системы
         if (!CheatToggles.elecSab && !CheatToggles.unfixableLights) return;
 
-        HudManager.Instance.Notifier.AddDisconnectMessage("Electrical system not present on this map");
+        HudManager.Instance.Notifier.AddDisconnectMessage("Электрическая система отсутствует на этой карте");
         CheatToggles.elecSab = CheatToggles.unfixableLights = false;
     }
 
@@ -197,16 +197,16 @@ public static class MalumSabotageCheats
     {
         if (CheatToggles.unfixableLights == _unfixableLights) return;
 
-        // Apparently most values you put for amount in RpcUpdateSystem will break lights completely
-        // They are unfixable through regular means (toggling switches)
-        // They can only be repaired by repeating RpcUpdateSystem with the same amount
+        // По-видимому, большинство значений, которые вы вводите для amount в RpcUpdateSystem, полностью ломают свет
+        // Их невозможно починить обычными средствами (переключение тумблеров)
+        // Их можно починить только повторением RpcUpdateSystem с тем же значением
 
         if (!_unfixableLights)
         {
             CheatToggles.elecSab = false;
         }
 
-        shipStatus.RpcUpdateSystem(SystemTypes.Electrical, 69); // Repair or Sabotage
+        shipStatus.RpcUpdateSystem(SystemTypes.Electrical, 69); // Починить или саботировать
 
         _unfixableLights = CheatToggles.unfixableLights;
     }
@@ -215,20 +215,20 @@ public static class MalumSabotageCheats
     {
         if (!CheatToggles.mushSab) return;
 
-        if (mapId == 5) // MushroomMixup only works on Fungle
+        if (mapId == 5) // MushroomMixup работает только на Fungle
         {
 
-            shipStatus.RpcUpdateSystem(SystemTypes.MushroomMixupSabotage, 1); // Sabotage
+            shipStatus.RpcUpdateSystem(SystemTypes.MushroomMixupSabotage, 1); // Саботировать
 
         }
         else
         {
-            // Notify the player if they try to activate the cheat in a map without mushrooms
+            // Уведомить игрока, если он пытается активировать чит на карте без грибов
 
-            HudManager.Instance.Notifier.AddDisconnectMessage("Mushrooms not present on this map");
+            HudManager.Instance.Notifier.AddDisconnectMessage("Грибы отсутствуют на этой карте");
         }
 
-        // Repair (bugged)
+        // Починить (сломано)
         // var mushSys = shipStatus.Systems[SystemTypes.MushroomMixupSabotage].Cast<MushroomMixupSabotageSystem>();
         // mushSys.Deteriorate(mushSys.currentSecondsUntilHeal);
 
@@ -248,7 +248,7 @@ public static class MalumSabotageCheats
         }
         else
         {
-            HudManager.Instance.Notifier.AddDisconnectMessage("Mushrooms not present on this map");
+            HudManager.Instance.Notifier.AddDisconnectMessage("Грибы отсутствуют на этой карте");
         }
 
         CheatToggles.mushSpore = false;
@@ -281,7 +281,7 @@ public static class MalumSabotageCheats
     {
         var currentMapID = Utils.GetCurrentMapID();
 
-        // Handle all sabotage systems
+        // Обработка всех систем саботажа
         HandleReactor(shipStatus, currentMapID);
         HandleOxygen(shipStatus, currentMapID);
         HandleComms(shipStatus, currentMapID);
@@ -293,7 +293,7 @@ public static class MalumSabotageCheats
     {
         var currentMapID = Utils.GetCurrentMapID();
 
-        // Handle Fungle sabotage systems
+        // Обработка систем саботажа на Fungle
         HandleMushMix(shipStatus, currentMapID);
         HandleSpores(shipStatus, currentMapID);
     }
