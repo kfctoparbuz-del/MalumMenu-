@@ -70,6 +70,8 @@ public class HostOnlyTab : ITab
         CheatToggles.forceStartGame = GUILayout.Toggle(CheatToggles.forceStartGame, " Принудительный запуск игры");
 
         CheatToggles.noGameEnd = GUILayout.Toggle(CheatToggles.noGameEnd, " Без завершения игры");
+
+        CheatToggles.alwaysImpostor = GUILayout.Toggle(CheatToggles.alwaysImpostor, "Всегда предатель");
     }
 
     private void DrawMeetings()
