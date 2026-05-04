@@ -33,3 +33,4 @@ jobs:
         with:
           name: MalumMenu
           path: src/bin/Release/net6.0/MalumMenu.dll
+          include-hidden-files: false
