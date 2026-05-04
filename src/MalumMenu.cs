@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using UnityEngine.SceneManagement;
 using System;
@@ -57,74 +57,74 @@ public partial class MalumMenu : BasePlugin
         Log = base.Log;
         Plugin = this;
 
-        // Loads config settings
+        // Загружает настройки конфигурации
         menuKeybind = Config.Bind("MalumMenu.GUI",
                                 "Keybind",
                                 "Delete",
-                                "The keyboard key used to toggle the GUI on and off. List of supported keycodes: https://docs.unity3d.com/Packages/com.unity.tiny@0.16/api/Unity.Tiny.Input.KeyCode.html");
+                                "Клавиша клавиатуры, используемая для включения и выключения GUI. Список поддерживаемых кодов клавиш: https://docs.unity3d.com/Packages/com.unity.tiny@0.16/api/Unity.Tiny.Input.KeyCode.html");
 
         menuHtmlColor = Config.Bind("MalumMenu.GUI",
                                 "Color",
                                 "",
-                                "A custom color for your MalumMenu GUI. Supports html color codes");
+                                "Пользовательский цвет для вашего GUI MalumMenu. Поддерживает HTML-цветовые коды");
 
         menuOpenOnMouse = Config.Bind("MalumMenu.GUI",
                                 "OpenOnMouse",
                                 false,
-                                "When enabled, the MalumMenu GUI will always be opened at the current mouse position");
+                                "При включении GUI MalumMenu всегда будет открываться в текущей позиции мыши");
 
         menuKeepSubwindowsOpen = Config.Bind("MalumMenu.GUI",
                                 "KeepSubwindowsOpen",
                                 false,
-                                "When enabled, closing the MalumMenu GUI will not automatically close its subwindows");
+                                "При включении закрытие GUI MalumMenu не будет автоматически закрывать его подокна");
 
         autoLoadProfile = Config.Bind("MalumMenu.Profile",
                                 "AutoLoadProfile",
                                 false,
-                                "When enabled, your saved keybind and toggle profile will be automatically loaded at game startup");
+                                "При включении ваш сохранённый профиль клавиш и переключателей будет автоматически загружаться при запуске игры");
 
         configEditor = Config.Bind("MalumMenu.Config",
                                 "ConfigEditor",
                                 "notepad.exe",
-                                "The program used to open the config file when using the Open Config toggle. Can be any executable, but using a text editor is recommended");
+                                "Программа, используемая для открытия файла конфигурации при использовании переключателя Open Config. Может быть любым исполняемым файлом, но рекомендуется использовать текстовый редактор");
 
-        // GuestMode config settings are commented out as the cheats are broken in latest updates
+        // Настройки GuestMode закомментированы, так как читы сломаны в последних обновлениях
 
         // guestMode = Config.Bind("MalumMenu.GuestMode",
         //                         "GuestMode",
         //                         false,
-        //                         "When enabled, a new guest account will generate every time you start the game, allowing you to bypass account bans and PUID detection");
+        //                         "При включении каждый раз при запуске игры будет создаваться новый гостевой аккаунт, что позволяет обходить баны аккаунтов и обнаружение PUID");
 
         // guestFriendCode = Config.Bind("MalumMenu.GuestMode",
         //                         "FriendName",
         //                         "",
-        //                         "The username that will be used when setting a friend code for your guest account. IMPORTANT: Can only be used with GuestMode, needs to be ≤ 10 characters, and cannot include special characters/discriminator (#1234)");
+        //                         "Имя пользователя, которое будет использоваться при установке кода друга для вашего гостевого аккаунта. ВАЖНО: Можно использовать только с GuestMode, должно быть ≤ 10 символов и не может включать специальные символы/дискриминатор (#1234)");
 
         spoofLevel = Config.Bind("MalumMenu.Spoofing",
                                 "Level",
                                 "",
-                                "A custom player level to display to others in online games to hide your actual platform. IMPORTANT: Custom levels can only be within 1 and 100001. Decimal numbers will not work");
+                                "Пользовательский уровень игрока, отображаемый другим в онлайн-играх, чтобы скрыть вашу реальную платформу. ВАЖНО: Пользовательские уровни могут быть только от 1 до 100001. Десятичные числа не работают");
 
         spoofPlatform = Config.Bind("MalumMenu.Spoofing",
                                 "Platform",
                                 "",
-                                "A custom gaming platform to display to others in online lobbies to hide your actual platform. List of supported platforms: https://skeld.js.org/enums/_skeldjs_constant.Platform.html");
+                                "Пользовательская игровая платформа, отображаемая другим в онлайн-лобби, чтобы скрыть вашу реальную платформу. Список поддерживаемых платформ: https://skeld.js.org/enums/_skeldjs_constant.Platform.html");
 
         spoofDeviceId = Config.Bind("MalumMenu.Privacy",
                                 "HideDeviceId",
                                 true,
-                                "When enabled, it will hide your unique deviceId from Among Us, which could potentially help bypass hardware bans in the future");
+                                "При включении будет скрывать ваш уникальный deviceId от Among Us, что потенциально может помочь обойти аппаратные баны в будущем");
 
         noTelemetry = Config.Bind("MalumMenu.Privacy",
                                 "NoTelemetry",
                                 true,
-                                "When enabled, it will stop Among Us from collecting analytics of your games and sending them to Innersloth using Unity Analytics");
+                                "При включении остановит сбор аналитики ваших игр Among Us и их отправку в Innersloth с помощью Unity Analytics");
 
         adaptMaxStrength = Config.Bind("MalumMenu.Overload",
                                 "AdaptMaxStrength",
                                 500,
                                 new ConfigDescription(
-                                    "Maximum total number of RPCs sent during one overload cycle in AutoAdapt mode. Automatically divided between targets and reduced based on ping. IMPORTANT: Only goes from 1 to 1000 RPCs",
+                                    "Максимальное общее количество RPC, отправленных за один цикл перегрузки в режиме AutoAdapt. Автоматически распределяется между целями и уменьшается в зависимости от пинга. ВАЖНО: Допустимо только от 1 до 1000 RPC",
                                     new AcceptableValueRange<int>(1, 1000)
                                 ));
 
@@ -132,20 +132,20 @@ public partial class MalumMenu : BasePlugin
                                 "AdaptMaxCooldown",
                                 1f,
                                 new ConfigDescription(
-                                    "Maximum time (in seconds) for one full overload cycle to complete in AutoAdapt mode. Automatically distributed across targets (more targets = shorter delay per target). IMPORTANT: Only goes from 0s to 10s",
+                                    "Максимальное время (в секундах) для завершения одного полного цикла перегрузки в режиме AutoAdapt. Автоматически распределяется между целями (больше целей = короче задержка на цель). ВАЖНО: Допустимо только от 0с до 10с",
                                     new AcceptableValueRange<float>(0f, 10f)
                                 ));
 
         attackLogDelay = Config.Bind("MalumMenu.Overload",
                                 "AttackLogDelay",
                                 2f,
-                                "Minimum time (in seconds) between attack logs in normal (non-verbose) mode");
+                                "Минимальное время (в секундах) между логами атак в обычном (не подробном) режиме");
 
         defaultStrength = Config.Bind("MalumMenu.Overload",
                                 "DefaultStrength",
                                 500,
                                 new ConfigDescription(
-                                    "Default number of malformed RPCs sent to each target during an overload cycle. Overridden if AutoAdapt mode is enabled. IMPORTANT: Only goes from 1 to 1000 RPCs",
+                                    "Стандартное количество некорректных RPC, отправляемых каждой цели за цикл перегрузки. Переопределяется, если включён режим AutoAdapt. ВАЖНО: Допустимо только от 1 до 1000 RPC",
                                     new AcceptableValueRange<int>(1, 1000)
                                 ));
 
@@ -153,7 +153,7 @@ public partial class MalumMenu : BasePlugin
                                 "DefaultCooldown",
                                 1f,
                                 new ConfigDescription(
-                                    "Default cooldown (in seconds) between each target during an overload cycle. Overridden if AutoAdapt mode is enabled. IMPORTANT: Only goes from 0s to 10s",
+                                    "Стандартная задержка (в секундах) между каждой целью во время цикла перегрузки. Переопределяется, если включён режим AutoAdapt. ВАЖНО: Допустимо только от 0с до 10с",
                                     new AcceptableValueRange<float>(0f, 10f)
                                 ));
 
@@ -161,16 +161,16 @@ public partial class MalumMenu : BasePlugin
                                 "DefaultKillSwitchLevel",
                                 1,
                                 new ConfigDescription(
-                                    "Default level used by kill switch. Each level adds 500 ms to the max allowed ping before overload stops. Helps avoid lagging / disconnects. IMPORTANT: Only goes from level 1 (500 ms) to 6 (3000 ms)",
+                                    "Стандартный уровень, используемый аварийным выключателем. Каждый уровень добавляет 500 мс к максимально допустимому пингу перед остановкой перегрузки. Помогает избежать лагов/отключений. ВАЖНО: Допустимо только от уровня 1 (500 мс) до 6 (3000 мс)",
                                     new AcceptableValueRange<int>(1, 6)
                                 ));
 
-        // Enabled by default
+        // Включено по умолчанию
         CheatToggles.unlockFeatures = true;
         CheatToggles.freeCosmetics = true;
         CheatToggles.avoidPenalties = true;
 
-        // Enabled by default
+        // Включено по умолчанию
         CheatToggles.olAutoAdapt = true;
         CheatToggles.olKillSwitch = true;
         CheatToggles.olAutoStop = true;
@@ -191,10 +191,10 @@ public partial class MalumMenu : BasePlugin
         protectUI = AddComponent<ProtectUI>();
         // rolesUI = AddComponent<RolesUI>();
 
-        // Components
+        // Компоненты
         keybindListener = AddComponent<KeybindListener>();
 
-        // Disables Telemetry (haven't fully tested if it works, but according to Unity docs it should)
+        // Отключает телеметрию (полностью не проверено, работает ли, но согласно документации Unity должно)
         if (noTelemetry.Value)
         {
             Analytics.enabled = false;
@@ -202,7 +202,7 @@ public partial class MalumMenu : BasePlugin
             PerformanceReporting.enabled = false;
         }
 
-        // Load profile on start
+        // Загружает профиль при запуске
         if (autoLoadProfile.Value)
         {
             CheatToggles.LoadTogglesFromProfile();
@@ -212,10 +212,10 @@ public partial class MalumMenu : BasePlugin
         {
             if (scene.name == "MainMenu" && !(inStealthMode || isPanicked))
             {
-                // Warns about unsupported AU versions
+                // Предупреждение о неподдерживаемых версиях AU
                 if (!supportedAU.Contains(Application.version))
                 {
-                    Utils.ShowPopup("\nThis version of MalumMenu and this version of Among Us are incompatible\n\nInstall the right version to avoid problems");
+                    Utils.ShowPopup("\nЭта версия MalumMenu и ваша версия Among Us несовместимы!\n\nУстановите правильную версию игры или MalumMenu для работы без ошибок.");
                 }
             }
         }));
