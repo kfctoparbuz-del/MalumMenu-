@@ -21,42 +21,42 @@
 </p>
 
 <p align="center">
-  <b>An easy-to-use Among Us cheat menu with a simple GUI and lots of useful modules.</b>
+  <b>Простое в использовании меню читов для Among Us с простым графическим интерфейсом и множеством полезных модулей.</b>
 </p>
 
 <!-- omit in toc -->
 # 😎 Table Of Contents
 
-- [🎁 Releases](#-releases)
-- [⬇️ Installation](#️-installation)
+- [🎁 Релизы](#-releases)
+- [⬇️ Установка](#️-installation)
   - [🪟 Windows](#-windows)
   - [🐧 Linux](#-linux)
-- [📋 Features](#-features)
-- [❓ FAQ](#-faq)
-- [⚠️ Disclaimer](#️-disclaimer)
+- [📋 Фичи \ функции](#-features)
+- [❓ Вопросы](#-faq)
+- [⚠️ Дисклеймер](#️-disclaimer)
 
 # 🎁 Releases
 
 | Mod Version| Among Us - Version | Link |
 |----------|-------------|-----------------|
-| v3.1.0 | 17.3 ( 2026.3.31 ) | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v3.1.0) |
-| v3.0.2 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.2) |
-| v3.0.1 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.1) |
-| v3.0.0 | 17.2.1 ( 2026.2.24 ) | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.0) |
-| v2.4.2 | 2024.9.4 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.2) |
-| v2.4.1 | 2024.8.13 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.1) |
-| v2.4.0 | 2024.6.18 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.0) |
-| v2.3.1 | 2024.6.18 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.1) |
-| v2.3.0 | 2024.6.4 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.0) |
-| v2.2.0 | 2024.3.5 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.2.0) |
-| v2.1.0 | 2023.11.28 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.1.0) |
-| v2.0.0 | 2023.11.28 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v2.0.0) |
-| v1.2.1 | 2023.11.28 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.1) |
-| v1.2.0 | 2023.11.28 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.0) |
-| v1.1.2 | 2023.7.12<br>2023.7.11 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.2) |
-| v1.1.1 | 2023.7.12<br>2023.7.11 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.1) |
-| v1.1.0 | 2023.7.12<br>2023.7.11 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.0) |
-| v1.0.0 | 2023.7.12<br>2023.7.11 | [Download](https://github.com/scp222thj/MalumMenu/releases/tag/v1.0.0) |
+| v3.1.0 | 17.3 ( 2026.3.31 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.1.0) |
+| v3.0.2 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.2) |
+| v3.0.1 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.1) |
+| v3.0.0 | 17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.0) |
+| v2.4.2 | 2024.9.4 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.2) |
+| v2.4.1 | 2024.8.13 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.1) |
+| v2.4.0 | 2024.6.18 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.0) |
+| v2.3.1 | 2024.6.18 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.1) |
+| v2.3.0 | 2024.6.4 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.0) |
+| v2.2.0 | 2024.3.5 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.2.0) |
+| v2.1.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.1.0) |
+| v2.0.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.0.0) |
+| v1.2.1 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.1) |
+| v1.2.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.0) |
+| v1.1.2 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.2) |
+| v1.1.1 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.1) |
+| v1.1.0 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.0) |
+| v1.0.0 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.0.0) |
 
 # ⬇️ Installation
 
