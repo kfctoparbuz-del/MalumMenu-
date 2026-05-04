@@ -15,7 +15,7 @@ public class ProtectUI : MonoBehaviour
 
     private void Start()
     {
-        // Instantiate 2D area of ProtectUI
+        // Создание 2D области интерфейса защиты
         _windowRect = new(
             Screen.width / 2f - windowWidth / 2f,
             Screen.height / 2f - windowHeight / 2f,
@@ -30,7 +30,7 @@ public class ProtectUI : MonoBehaviour
 
         UIHelpers.ApplyUIColor();
 
-        _windowRect = GUI.Window((int)WindowId.ProtectUI, _windowRect, (GUI.WindowFunction)ProtectWindow, "Protect Players");
+        _windowRect = GUI.Window((int)WindowId.ProtectUI, _windowRect, (GUI.WindowFunction)ProtectWindow, "Защитить игроков");
     }
 
     private void ProtectWindow(int windowID)
@@ -43,7 +43,7 @@ public class ProtectUI : MonoBehaviour
         {
             if (!player.Data || !player.Data.Role || string.IsNullOrEmpty(player.Data.PlayerName))
             {
-                if (playersToProtect.Contains(player))  // Ensure to remove invalid players from the list
+                if (playersToProtect.Contains(player))  // Убедиться, что недействительные игроки удаляются из списка
                 {
                     playersToProtect.Remove(player);
                 }
@@ -57,21 +57,21 @@ public class ProtectUI : MonoBehaviour
 
             if (player.protectedByGuardianId == -1)
             {
-                GUILayout.Label("<color=#FF0000>Unprotected</color>", GUILayout.Width(135));
+                GUILayout.Label("<color=#FF0000>Не защищён</color>", GUILayout.Width(135));
             }
             else
             {
                 NetworkedPlayerInfo guardianInfo = GameData.Instance.GetPlayerById((byte)player.protectedByGuardianId);
-                GUILayout.Label($"<color=#00FF00>Protected</color> by <color=#{ColorUtility.ToHtmlStringRGB(guardianInfo.Color)}>{guardianInfo._object.Data.PlayerName}</color>", GUILayout.Width(135));
+                GUILayout.Label($"<color=#00FF00>Защищён</color> игроком <color=#{ColorUtility.ToHtmlStringRGB(guardianInfo.Color)}>{guardianInfo._object.Data.PlayerName}</color>", GUILayout.Width(135));
             }
 
-            if (GUILayout.Button("Protect", GUIStylePreset.NormalButton) && Utils.isHost && !Utils.isLobby)
+            if (GUILayout.Button("Защитить", GUIStylePreset.NormalButton) && Utils.isHost && !Utils.isLobby)
             {
                 PlayerControl.LocalPlayer.RpcProtectPlayer(player, player.cosmetics.ColorId);
             }
 
             var keepProtected = playersToProtect.Contains(player);
-            keepProtected = GUILayout.Toggle(keepProtected, "Keep protected", GUIStylePreset.NormalToggle);
+            keepProtected = GUILayout.Toggle(keepProtected, "Постоянно защищать", GUIStylePreset.NormalToggle);
 
             if (keepProtected && !playersToProtect.Contains(player))
             {
@@ -89,7 +89,7 @@ public class ProtectUI : MonoBehaviour
 
         GUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("Protect Everyone") && Utils.isHost && !Utils.isLobby)
+        if (GUILayout.Button("Защитить всех") && Utils.isHost && !Utils.isLobby)
         {
             foreach (var player in PlayerControl.AllPlayerControls)
             {
@@ -99,7 +99,7 @@ public class ProtectUI : MonoBehaviour
 
         GUILayout.FlexibleSpace();
 
-        _keepEveryoneProtected = GUILayout.Toggle(_keepEveryoneProtected, "Keep Everyone Protected");
+        _keepEveryoneProtected = GUILayout.Toggle(_keepEveryoneProtected, "Постоянно защищать всех");
 
         if (_keepEveryoneProtected)
         {
@@ -113,7 +113,7 @@ public class ProtectUI : MonoBehaviour
         }
         else
         {
-            if (PlayerControl.AllPlayerControls.Count == playersToProtect.Count)  // Only clear the list if all players were being kept protected
+            if (PlayerControl.AllPlayerControls.Count == playersToProtect.Count)  // Очистить список, только если все игроки были под постоянной защитой
             {
                 playersToProtect.Clear();
             }
