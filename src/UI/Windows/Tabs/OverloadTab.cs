@@ -5,7 +5,7 @@ namespace MalumMenu;
 
 public class OverloadTab : ITab
 {
-    public string name => "Overload";
+    public string name => "Атака";
 
     private GUIStyle _sliderSubtitle;
     private int _maxStrength = 1000;
@@ -51,14 +51,14 @@ public class OverloadTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.showOverload = GUILayout.Toggle(CheatToggles.showOverload, " Show Overload Menu");
+        CheatToggles.showOverload = GUILayout.Toggle(CheatToggles.showOverload, " Показать меню атаки");
     }
 
     private void DrawSettingsToggle()
     {
-        GUILayout.Label("Settings", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Настройки", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.showOverloadSettings = GUILayout.Toggle(CheatToggles.showOverloadSettings, " Show Overload Settings");
+        CheatToggles.showOverloadSettings = GUILayout.Toggle(CheatToggles.showOverloadSettings, " Показать настройки атаки");
     }
 
     private void DrawSettingsSection()
@@ -73,10 +73,10 @@ public class OverloadTab : ITab
 
         GUILayout.BeginHorizontal();
 
-        CheatToggles.olAutoAdapt = GUILayout.Toggle(CheatToggles.olAutoAdapt, " Auto Adapt");
+        CheatToggles.olAutoAdapt = GUILayout.Toggle(CheatToggles.olAutoAdapt, " Автоадаптация");
 
         int ping = Utils.GetPing();
-        string pingStr = $"PING : {ping} ms";
+        string pingStr = $"ПИНГ : {ping} мс";
         GUILayout.Label(Utils.GetColoredPingText(pingStr, ping));
 
         int strength = OverloadHandler.strength;
@@ -85,13 +85,13 @@ public class OverloadTab : ITab
         float numExecutionsPerSec;
         string extraStr = "";
 
-        if (cooldown > Time.unscaledDeltaTime) // numExecutionsPerSec would be under FPS
+        if (cooldown > Time.unscaledDeltaTime) // numExecutionsPerSec будет ниже FPS
         {
             numExecutionsPerSec = 1f / cooldown;
         }
-        else // numExecutionsPerSec would be over FPS
+        else // numExecutionsPerSec будет выше FPS
         {
-            // FPS fluctuates too often so only update after significant variation (> 5)
+            // FPS колеблется слишком часто, поэтому обновляем только после значительного изменения (> 5)
 
             float fps = Utils.GetFps();
             if (Math.Abs(fps - _fpsEstimate) > 5f)
@@ -99,11 +99,11 @@ public class OverloadTab : ITab
                 _fpsEstimate = fps;
             }
 
-            numExecutionsPerSec = (int)_fpsEstimate; // numExecutionsPerSec is capped by FPS regardless of cooldown
-            extraStr = " (FPS Cap)";
+            numExecutionsPerSec = (int)_fpsEstimate; // numExecutionsPerSec ограничен FPS независимо от задержки
+            extraStr = " (Ограничение FPS)";
         }
 
-        int numTargetsPerSec = OverloadUI.currentTargets.Count <= numExecutionsPerSec ? OverloadUI.currentTargets.Count : (int)numExecutionsPerSec; // numTargetsPerSec is capped by numExecutionsPerSec
+        int numTargetsPerSec = OverloadUI.currentTargets.Count <= numExecutionsPerSec ? OverloadUI.currentTargets.Count : (int)numExecutionsPerSec; // numTargetsPerSec ограничен numExecutionsPerSec
 
         int rpcPerTarget = numTargetsPerSec > 0 ? (int)(strength * numExecutionsPerSec / numTargetsPerSec) :
                                             (int)(strength * numExecutionsPerSec);
@@ -112,7 +112,7 @@ public class OverloadTab : ITab
                         ? $"{rpcPerTarget*Math.Max(1, numTargetsPerSec)}"
                         : $"{rpcPerTarget}x{numTargetsPerSec}";
 
-        CheatToggles.olShowRpcTotal = GUILayout.Toggle(CheatToggles.olShowRpcTotal, $" RPC/s : {rpcStr}{extraStr}");
+        CheatToggles.olShowRpcTotal = GUILayout.Toggle(CheatToggles.olShowRpcTotal, $" RPC/с : {rpcStr}{extraStr}");
 
         GUILayout.EndHorizontal();
 
@@ -132,31 +132,31 @@ public class OverloadTab : ITab
 
         GUILayout.BeginVertical(GUILayout.Width(MenuUI.windowWidth * 0.35f));
 
-        GUILayout.Label("General", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Общие", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.olAutoStart = GUILayout.Toggle(CheatToggles.olAutoStart, " Auto Start when Ready");
+        CheatToggles.olAutoStart = GUILayout.Toggle(CheatToggles.olAutoStart, " Автозапуск когда готово");
 
-        CheatToggles.olAutoStop = GUILayout.Toggle(CheatToggles.olAutoStop, " Auto Stop when Done");
+        CheatToggles.olAutoStop = GUILayout.Toggle(CheatToggles.olAutoStop, " Автоостановка когда завершено");
 
-        CheatToggles.olLockTargets = GUILayout.Toggle(CheatToggles.olLockTargets, " Lock Targets on Start");
+        CheatToggles.olLockTargets = GUILayout.Toggle(CheatToggles.olLockTargets, " Блокировать цели при запуске");
 
-        CheatToggles.olKillSwitch = GUILayout.Toggle(CheatToggles.olKillSwitch, " Kill Switch on Lag");
+        CheatToggles.olKillSwitch = GUILayout.Toggle(CheatToggles.olKillSwitch, " Аварийный выключатель при лагах");
 
         if (CheatToggles.olKillSwitch)
         {
             Color standardBackgroundColor = GUI.backgroundColor;
             GUI.backgroundColor = Color.red;
 
-            bool isPressed = GUILayout.Button($"{OverloadUI.killSwitchThreshold} ms", GUILayout.Width(70f));
+            bool isPressed = GUILayout.Button($"{OverloadUI.killSwitchThreshold} мс", GUILayout.Width(70f));
             if (isPressed)
             {
-                if (OverloadUI.killSwitchThreshold >= 3000) // Max KS = 3000 ms
+                if (OverloadUI.killSwitchThreshold >= 3000) // Макс KS = 3000 мс
                 {
-                    OverloadUI.killSwitchThreshold = 500; // Min KS = 500 ms
+                    OverloadUI.killSwitchThreshold = 500; // Мин KS = 500 мс
                 }
                 else
                 {
-                    OverloadUI.killSwitchThreshold = OverloadUI.killSwitchThreshold + 500; // Increment by 500 ms steps
+                    OverloadUI.killSwitchThreshold = OverloadUI.killSwitchThreshold + 500; // Увеличение с шагом 500 мс
                 }
             }
 
@@ -167,19 +167,19 @@ public class OverloadTab : ITab
 
         GUILayout.BeginVertical();
 
-        GUILayout.Label("Logs", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Логи", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.olLogStartStop = GUILayout.Toggle(CheatToggles.olLogStartStop, " Log START and STOP");
+        CheatToggles.olLogStartStop = GUILayout.Toggle(CheatToggles.olLogStartStop, " Логировать ЗАПУСК и ОСТАНОВКУ");
 
-        CheatToggles.olLogAddRemove = GUILayout.Toggle(CheatToggles.olLogAddRemove, " Log ADD and REMOVE");
+        CheatToggles.olLogAddRemove = GUILayout.Toggle(CheatToggles.olLogAddRemove, " Логировать ДОБАВЛЕНИЕ и УДАЛЕНИЕ");
 
-        CheatToggles.olLogAttack = GUILayout.Toggle(CheatToggles.olLogAttack, " Log Attack");
+        CheatToggles.olLogAttack = GUILayout.Toggle(CheatToggles.olLogAttack, " Логировать атаку");
 
-        CheatToggles.olLogDisconnect = GUILayout.Toggle(CheatToggles.olLogDisconnect, " Log Disconnect");
+        CheatToggles.olLogDisconnect = GUILayout.Toggle(CheatToggles.olLogDisconnect, " Логировать отключение");
 
-        CheatToggles.olVerboseLogs = GUILayout.Toggle(CheatToggles.olVerboseLogs, " Verbose Attack Logs");
+        CheatToggles.olVerboseLogs = GUILayout.Toggle(CheatToggles.olVerboseLogs, " Подробные логи атак");
 
-        CheatToggles.olAutoClear = GUILayout.Toggle(CheatToggles.olAutoClear, " Auto Clear on Start");
+        CheatToggles.olAutoClear = GUILayout.Toggle(CheatToggles.olAutoClear, " Автоочистка при запуске");
 
         GUILayout.EndVertical();
 
@@ -190,7 +190,7 @@ public class OverloadTab : ITab
 
     private void DrawSettingsSliders()
     {
-        GUILayout.Label($"Strength : {_rawStrength}", _sliderSubtitle);
+        GUILayout.Label($"Сила : {_rawStrength}", _sliderSubtitle);
         GUILayout.Space(1);
 
         GUILayout.BeginHorizontal();
@@ -199,7 +199,7 @@ public class OverloadTab : ITab
 
         if (inputStrength != _rawStrength)
         {
-            CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+            CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
             _rawStrength = inputStrength;
         }
 
@@ -210,7 +210,7 @@ public class OverloadTab : ITab
 
         GUILayout.Space(10);
 
-        GUILayout.Label($"Cooldown : {_rawCooldown:F2}", _sliderSubtitle);
+        GUILayout.Label($"Задержка : {_rawCooldown:F2}", _sliderSubtitle);
         GUILayout.Space(1);
 
         GUILayout.BeginHorizontal();
@@ -219,7 +219,7 @@ public class OverloadTab : ITab
 
         if (inputCooldown != _rawCooldown)
         {
-            CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+            CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
             _rawCooldown = inputCooldown;
         }
 
@@ -230,16 +230,16 @@ public class OverloadTab : ITab
 
         if (!CheatToggles.olAutoAdapt)
         {
-            float strengthStep = _maxStrength / 100f; // Slider steps are 1/100 of max strength
+            float strengthStep = _maxStrength / 100f; // Шаги слайдера составляют 1/100 от максимальной силы
             int clampStrength = Mathf.RoundToInt(Mathf.Clamp(Mathf.Round(_rawStrength / strengthStep) * strengthStep, 1, _maxStrength));
             OverloadHandler.strength = clampStrength;
 
-            float cooldownStep = _maxCooldown / 100f; // Slider steps are 1/100 of max cooldown
+            float cooldownStep = _maxCooldown / 100f; // Шаги слайдера составляют 1/100 от максимальной задержки
             float clampCooldown = Mathf.Round(_rawCooldown / cooldownStep) * cooldownStep;
             OverloadHandler.cooldown = clampCooldown;
         }
 
-        // Adjust bounds so sliders will never be out of bounds
+        // Регулировка границ, чтобы слайдеры никогда не выходили за пределы
 
         while (_maxStrength < OverloadHandler.strength)
         {
@@ -253,45 +253,45 @@ public class OverloadTab : ITab
 
         if (isPressedMaxStrength)
         {
-            if (_maxStrength >= 1000) // Max _maxStrength = 1000 RPCs
+            if (_maxStrength >= 1000) // Макс _maxStrength = 1000 RPC
             {
-                CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+                CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
 
-                OverloadHandler.strength = Mathf.RoundToInt(OverloadHandler.strength/10f); // Adjust value to account for max change (÷10)
+                OverloadHandler.strength = Mathf.RoundToInt(OverloadHandler.strength/10f); // Корректировка значения с учётом изменения максимума (÷10)
 
-                _maxStrength = 100; // Min _maxStrength = 100 RPCs
+                _maxStrength = 100; // Мин _maxStrength = 100 RPC
             }
             else
             {
-                CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+                CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
 
-                OverloadHandler.strength *= 10; // Adjust value to account for max change (x10)
+                OverloadHandler.strength *= 10; // Корректировка значения с учётом изменения максимума (x10)
 
-                _maxStrength *= 10; // Increment by x10 steps
+                _maxStrength *= 10; // Увеличение с шагом x10
             }
         }
 
         if (isPressedMaxCooldown)
         {
-            if (_maxCooldown >= 10f) // Max _maxCooldown = 10s
+            if (_maxCooldown >= 10f) // Макс _maxCooldown = 10с
             {
-                CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+                CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
 
-                OverloadHandler.cooldown /= 10f; // Adjust value to account for max change (÷10)
+                OverloadHandler.cooldown /= 10f; // Корректировка значения с учётом изменения максимума (÷10)
 
-                _maxCooldown = 1f; // Min _maxCooldown = 1s
+                _maxCooldown = 1f; // Мин _maxCooldown = 1с
             }
             else
             {
-                CheatToggles.olAutoAdapt = false; // Disable AutoAdapt if user does manual input
+                CheatToggles.olAutoAdapt = false; // Отключить AutoAdapt, если пользователь вводит вручную
 
-                OverloadHandler.cooldown *= 10; // Adjust value to account for max change (x10)
+                OverloadHandler.cooldown *= 10; // Корректировка значения с учётом изменения максимума (x10)
 
-                _maxCooldown *= 10; // Increment by x10 steps
+                _maxCooldown *= 10; // Увеличение с шагом x10
             }
         }
 
-        // Update slider values to match actual values
+        // Обновление значений слайдеров в соответствии с фактическими значениями
 
         _rawStrength = OverloadHandler.strength;
         _rawCooldown = OverloadHandler.cooldown;
