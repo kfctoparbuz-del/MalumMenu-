@@ -51,9 +51,9 @@ public class RolesTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.setFakeRole = GUILayout.Toggle(CheatToggles.setFakeRole, " Фальшивая роль");
+        CheatToggles.setFakeRole = GUILayout.Toggle(CheatToggles.setFakeRole, " Фейк роль");
 
-        CheatToggles.setFakeAlive = GUILayout.Toggle(CheatToggles.setFakeAlive, " Фальшиво ожить");
+        CheatToggles.setFakeAlive = GUILayout.Toggle(CheatToggles.setFakeAlive, " Фейково ожить");
     }
 
     private void DrawImpostor()
