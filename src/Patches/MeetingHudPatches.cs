@@ -10,7 +10,7 @@ public static class MeetingHud_Update
 {
     public static List<int> votedPlayers = new List<int>();
 
-    // Prefix patch of MeetingHud.Update to constantly bloop new vote icons for each new vote being cast during the meeting
+    // Префикс-патч MeetingHud.Update для постоянного отображения новых иконок голосов для каждого нового голоса, поданного во время собрания
     public static void Prefix(MeetingHud __instance)
     {
         if (__instance.state < MeetingHud.VoteStates.Results)
@@ -56,7 +56,7 @@ public static class MeetingHud_Update
                 }
             }
 
-            // This is required to see who skipped the voting
+            // Это необходимо, чтобы видеть, кто пропустил голосование
             if (__instance.SkippedVoting)
             {
                 __instance.SkippedVoting.SetActive(CheatToggles.revealVotes);
@@ -68,7 +68,7 @@ public static class MeetingHud_Update
     {
         MalumESP.MeetingNametags(__instance);
 
-        // Bugfix: NoClip staying active if meeting is called whilst climbing ladder
+        // Исправление бага: NoClip остаётся активным, если собрание вызвано во время подъёма по лестнице
         PlayerControl.LocalPlayer.onLadder = false;
     }
 }
@@ -76,7 +76,7 @@ public static class MeetingHud_Update
 [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.PopulateResults))]
 public static class MeetingHud_PopulateResults
 {
-    // Prefix patch of MeetingHud.PopulateResults to clear all vote icons before repopulating them for final results
+    // Префикс-патч MeetingHud.PopulateResults для очистки всех иконок голосов перед их повторным заполнением для окончательных результатов
     public static void Prefix(MeetingHud __instance)
     {
         foreach (var votedForArea in __instance.playerStates)
@@ -116,17 +116,17 @@ public static class MeetingHud_PopulateResults
 [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.CheckForEndVoting))]
 public static class MeetingHud_CheckForEndVoting
 {
-    // Prefix patch of MeetingHud.CheckForEndVoting to make the local player immune to being voted out
+    // Префикс-патч MeetingHud.CheckForEndVoting для защиты локального игрока от исключения голосованием
     public static bool Prefix(MeetingHud __instance)
     {
-        if (!CheatToggles.voteImmune) return true; // We don't need to check whether we are host because this method only runs on the host's side
+        if (!CheatToggles.voteImmune) return true; // Нам не нужно проверять, являемся ли мы хостом, потому что этот метод выполняется только на стороне хоста
 
         if (!__instance.playerStates.All(ps => ps.AmDead || ps.DidVote)) return true;
 
         var max = __instance.CalculateVotes().MaxPair(out var tie);
         var exiled = GameData.Instance.AllPlayers.ToArray().FirstOrDefault(v => !tie && v.PlayerId == max.Key);
 
-        // This is the only change from the original method - make sure local player is not exiled
+        // Это единственное изменение от оригинального метода - убедиться, что локальный игрок не исключён
         if (exiled != null && exiled == PlayerControl.LocalPlayer.Data)
         {
             exiled = null;
