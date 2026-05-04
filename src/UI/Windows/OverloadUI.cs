@@ -395,7 +395,7 @@ public class OverloadUI : MonoBehaviour
         bool newOverloadCrew = GUILayout.Toggle(CheatToggles.overloadCrew, " Члены экипажа");
         CheatToggles.overloadCrew = _areTargetsUnlocked ? newOverloadCrew : false;
 
-        bool newOverloadImps = GUILayout.Toggle(CheatToggles.overloadImps, " Самозванцы");
+        bool newOverloadImps = GUILayout.Toggle(CheatToggles.overloadImps, " Предатели");
         CheatToggles.overloadImps = _areTargetsUnlocked ? newOverloadImps : false;
 
         bool newOverloadReset = GUILayout.Toggle(CheatToggles.overloadReset, " Сбросить");
@@ -486,7 +486,7 @@ public class OverloadUI : MonoBehaviour
 
         GUILayout.BeginHorizontal(GUILayout.ExpandWidth(false));
 
-        if (GUILayout.Button("Очистить лог"))
+        if (GUILayout.Button("Очистить логи"))
         {
             _logEntries.Clear();
         }
