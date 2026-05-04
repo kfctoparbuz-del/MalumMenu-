@@ -5,13 +5,13 @@ public static class MalumSpoof
 {
     public static void SpoofLevel()
     {
-        // Parse Spoofing.Level config entry and turn it into a uint
+        // Парсинг записи конфигурации Spoofing.Level и преобразование её в uint
         if (!string.IsNullOrEmpty(MalumMenu.spoofLevel.Value) &&
             uint.TryParse(MalumMenu.spoofLevel.Value, out uint parsedLevel) &&
             parsedLevel != DataManager.Player.Stats.Level)
         {
 
-            // Store the spoofed level using DataManager
+            // Сохранение подменённого уровня с помощью DataManager
             DataManager.Player.stats.level = parsedLevel - 1;
             DataManager.Player.Save();
         }
