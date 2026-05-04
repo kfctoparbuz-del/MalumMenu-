@@ -4,12 +4,12 @@ namespace MalumMenu;
 
 public static class TracersHandler
 {
-    // Draws a tracer from LocalPlayer to another player.
+    // Рисует трассер от LocalPlayer до другого игрока.
     public static void DrawPlayerTracer(PlayerPhysics playerPhysics)
     {
         try
         {
-            var color = Color.clear; // All tracers are invisible by default
+            var color = Color.clear; // Все трассеры по умолчанию невидимы
 
             if (!playerPhysics.myPlayer.Data.IsDead)
             {
@@ -22,11 +22,11 @@ public static class TracersHandler
                     }
                     else if (CheatToggles.colorBasedTracers)
                     {
-                        color = playerPhysics.myPlayer.Data.Color; // Color-Based Tracer
+                        color = playerPhysics.myPlayer.Data.Color; // Трассер по цвету
                     }
                     else
                     {
-                        color = playerPhysics.myPlayer.Data.Role.TeamColor; // Team-Based Tracer
+                        color = playerPhysics.myPlayer.Data.Role.TeamColor; // Трассер по команде
                     }
                 }
             }
@@ -40,24 +40,24 @@ public static class TracersHandler
                     }
                     else if (CheatToggles.colorBasedTracers)
                     {
-                        color = playerPhysics.myPlayer.Data.Color; // Color-Based Tracer
+                        color = playerPhysics.myPlayer.Data.Color; // Трассер по цвету
                     }
                     else
                     {
-                        color = Palette.White; // Ghost Tracer (White)
+                        color = Palette.White; // Трассер призрака (белый)
                     }
                 }
             }
 
-            // Draw tracer between the player and LocalPlayer using the right color
+            // Рисует трассер между игроком и LocalPlayer, используя соответствующий цвет
             Utils.DrawTracer(playerPhysics.myPlayer.gameObject, PlayerControl.LocalPlayer.gameObject, color);
         } catch { }
     }
 
-    // Draws a tracer LocalPlayer to a dead body. Only draws tracers for unreported dead bodies.
+    // Рисует трассер от LocalPlayer до трупа. Рисует трассеры только для незаявленных трупов.
     public static void DrawBodyTracer(DeadBody deadBody)
     {
-        var color = Color.clear; // All tracers are invisible by default
+        var color = Color.clear; // Все трассеры по умолчанию невидимы
 
         if (CheatToggles.tracersBodies)
         {
@@ -67,29 +67,29 @@ public static class TracersHandler
             }
             else if (CheatToggles.colorBasedTracers)
             {
-                color = GameData.Instance.GetPlayerById(deadBody.ParentId).Color; // Color-Based Tracer
+                color = GameData.Instance.GetPlayerById(deadBody.ParentId).Color; // Трассер по цвету
             }
             else
             {
-                color = Color.yellow; // Dead Body Tracer (Yellow)
+                color = Color.yellow; // Трассер трупа (жёлтый)
             }
         }
 
-        // Draw tracer between the dead body and LocalPlayer using the right color
+        // Рисует трассер между трупом и LocalPlayer, используя соответствующий цвет
         Utils.DrawTracer(deadBody.gameObject, PlayerControl.LocalPlayer.gameObject, color);
     }
 
-    // Gets a color based on the distance between the LocalPlayer and a target position.
-    // Closer distances are red, medium distances are yellow, and farther distances are green.
+    // Получает цвет на основе расстояния между LocalPlayer и целевой позицией.
+    // Близкие расстояния — красный, средние — жёлтый, дальние — зелёный.
     private static Color GetDistanceBasedColor(Vector3 targetPosition)
     {
-        const float maxDistance = 20f; // Green at 20+ units
-        const float minDistance = 2f;  // Red at 2 units or fewer
+        const float maxDistance = 20f; // Зелёный на расстоянии 20+ единиц
+        const float minDistance = 2f;  // Красный на расстоянии 2 единицы или меньше
 
         var distance = Vector3.Distance(targetPosition, PlayerControl.LocalPlayer.transform.position);
         var normalized = Mathf.InverseLerp(minDistance, maxDistance, distance);
 
-        // Interpolate: Red (close) -> Yellow (medium) -> Green (far)
+        // Интерполяция: Красный (близко) -> Жёлтый (средне) -> Зелёный (далеко)
         return normalized < 0.5f
             ? Color.Lerp(Color.red, Color.yellow, normalized * 2f)
             : Color.Lerp(Color.yellow, Color.green, (normalized - 0.5f) * 2f);
