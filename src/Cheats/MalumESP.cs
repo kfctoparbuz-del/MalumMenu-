@@ -10,20 +10,20 @@ public static class MalumESP
     {
         if (CheatToggles.noShadows)
         {
-            // Change the Z axis position of spore clouds as to make players appear above them
+            // Изменение позиции по оси Z грибных облаков, чтобы игроки отображались над ними
 
             mushroom.sporeMask.transform.position = new Vector3(mushroom.sporeMask.transform.position.x, mushroom.sporeMask.transform.position.y, -1);
             return;
         }
 
-        // Normal Z axis position: 5f
+        // Нормальная позиция по оси Z: 5f
         mushroom.sporeMask.transform.position = new Vector3(mushroom.sporeMask.transform.position.x, mushroom.sporeMask.transform.position.y, 5f);
     }
 
     public static bool IsFullbrightActive()
     {
-        // Fullbright is automatically activated when zooming out, spectating other players, or "freecamming"
-        // This is done to avoid issues with shadows
+        // Полная яркость автоматически активируется при отдалении камеры, наблюдении за другими игроками или "свободной камере"
+        // Это сделано для избежания проблем с тенями
 
         return CheatToggles.noShadows || Camera.main.orthographicSize > 3f || Camera.main.gameObject.GetComponent<FollowerCamera>().Target != PlayerControl.LocalPlayer;
     }
@@ -37,24 +37,24 @@ public static class MalumESP
 
             _resolutionChangeNeeded = true;
 
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f ) // Zoom out
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f ) // Отдалить
             {
 
-                // Both the main camera and the UI camera need to be adjusted
+                // Нужно настроить как основную камеру, так и камеру UI
 
                 Camera.main.orthographicSize++;
                 hudManager.UICamera.orthographicSize++;
 
-                // Utils.AdjustResolution() seems to be needed to properly sync the game's UI
-                // after a change in orthographicSize
+                // Utils.AdjustResolution(), похоже, требуется для правильной синхронизации UI игры
+                // после изменения orthographicSize
 
                 Utils.AdjustResolution();
 
             }
             else if (Input.GetAxis("Mouse ScrollWheel") > 0f )
             {
-                // Zoom in
-                if (!(Camera.main.orthographicSize > 3f)) return; // Never go below the default orthographicSize: 3f
+                // Приблизить
+                if (!(Camera.main.orthographicSize > 3f)) return; // Никогда не опускаться ниже стандартного orthographicSize: 3f
 
                 Camera.main.orthographicSize--;
                 hudManager.UICamera.orthographicSize--;
@@ -64,11 +64,11 @@ public static class MalumESP
         }
         else
         {
-            // orthographicSize is reset to default value: 3f
+            // orthographicSize сбрасывается до стандартного значения: 3f
             Camera.main.orthographicSize = 3f;
             hudManager.UICamera.orthographicSize = 3f;
 
-            // Utils.AdjustResolution() is invoked one last time to prevent issues with UI
+            // Utils.AdjustResolution() вызывается в последний раз для предотвращения проблем с UI
             if (_resolutionChangeNeeded)
             {
                 Utils.AdjustResolution();
@@ -83,15 +83,15 @@ public static class MalumESP
         {
             foreach (var playerState in meetingHud.playerStates)
             {
-                // Fetch the NetworkedPlayerInfo of each playerState
+                // Получение NetworkedPlayerInfo для каждого playerState
                 var data = GameData.Instance.GetPlayerById(playerState.TargetPlayerId);
 
                 if (data.IsNull() || data.Disconnected || data.Outfits[PlayerOutfitType.Default].IsNull()) continue;
 
-                // Update the player's nametag appropriately
+                // Соответствующее обновление таблички с именем игрока
                 playerState.NameText.text = Utils.GetNameTag(data, data.DefaultOutfit.PlayerName);
 
-                // Move and resize the nametag to prevent it overlapping with colorblind text
+                // Перемещение и изменение размера таблички с именем для предотвращения перекрытия с текстом для дальтоников
                 if (CheatToggles.seeRoles && CheatToggles.seePlayerInfo)
                 {
                     playerState.NameText.transform.localPosition = new Vector3(0.33f, 0.08f, 0f);
@@ -104,7 +104,7 @@ public static class MalumESP
                 }
                 else
                 {
-                    // Reset the position and scale of the nametag to default values (they're kinda weird but whatever)
+                    // Сброс позиции и масштаба таблички с именем к значениям по умолчанию (они странные, но ладно)
                     playerState.NameText.transform.localPosition = new Vector3(0.3384f, 0.0311f, -0.1f);
                     playerState.NameText.transform.localScale = new Vector3(0.9f, 1f, 1f);
                 }
@@ -117,7 +117,7 @@ public static class MalumESP
         try
         {
             playerPhysics.myPlayer.cosmetics.SetName(Utils.GetNameTag(playerPhysics.myPlayer.Data, playerPhysics.myPlayer.CurrentOutfit.PlayerName));
-            // Move the nameText up to prevent it overlapping with colorblind text
+            // Перемещение текста имени вверх для предотвращения перекрытия с текстом для дальтоников
             if (CheatToggles.seeRoles && CheatToggles.seePlayerInfo)
             {
                 playerPhysics.myPlayer.cosmetics.nameText.transform.localPosition = new Vector3(0f, 0.186f, 0f);
@@ -137,10 +137,10 @@ public static class MalumESP
     {
         try
         {
-            // Update the player's nametag appropriately
+            // Соответствующее обновление таблички с именем игрока
             chatBubble.NameText.text = Utils.GetNameTag(chatBubble.playerInfo, chatBubble.NameText.text, true);
 
-            // Adjust the chatBubble's size to the new nametag to prevent issues
+            // Регулировка размера пузыря чата под новую табличку с именем для предотвращения проблем
             chatBubble.NameText.ForceMeshUpdate(true, true);
             chatBubble.Background.size = new Vector2(5.52f, 0.2f + chatBubble.NameText.GetNotDumbRenderedHeight() + chatBubble.TextArea.GetNotDumbRenderedHeight());
             chatBubble.MaskArea.size = chatBubble.Background.size - new Vector2(0f, 0.03f);
@@ -164,7 +164,7 @@ public static class MalumESP
     {
         if (CheatToggles.freecam)
         {
-            // Completely disable FollowerCamera
+            // Полное отключение FollowerCamera
             if (!_freecamActive)
             {
 
@@ -175,20 +175,20 @@ public static class MalumESP
 
             }
 
-            // Prevent the player from moving while in freecam
+            // Предотвращение движения игрока во время свободной камеры
             PlayerControl.LocalPlayer.moveable = false;
 
-            // Get keyboard input
+            // Получение ввода с клавиатуры
             var movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
-            // Change the camera's position depending on the keyboard input
-            // Speed: 10f
+            // Изменение позиции камеры в зависимости от ввода с клавиатуры
+            // Скорость: 10f
             Camera.main.transform.position = Camera.main.transform.position + movement * 10f * Time.deltaTime;
 
         }
         else
         {
-            // Re-enable FollowerCamera & movement once freecam is disabled
+            // Повторное включение FollowerCamera и движения после отключения свободной камеры
             if (!_freecamActive) return;
             PlayerControl.LocalPlayer.moveable = true;
             Camera.main.gameObject.GetComponent<FollowerCamera>().enabled = true;
