@@ -51,9 +51,9 @@ public class RolesTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.setFakeRole = GUILayout.Toggle(CheatToggles.setFakeRole, " Установить фальшивую роль");
+        CheatToggles.setFakeRole = GUILayout.Toggle(CheatToggles.setFakeRole, " Фальшивая роль");
 
-        CheatToggles.setFakeAlive = GUILayout.Toggle(CheatToggles.setFakeAlive, " Установить фальшивого живого");
+        CheatToggles.setFakeAlive = GUILayout.Toggle(CheatToggles.setFakeAlive, " Фальшиво ожить");
     }
 
     private void DrawImpostor()
@@ -71,7 +71,7 @@ public class RolesTab : ITab
 
         CheatToggles.noShapeshiftAnim = GUILayout.Toggle(CheatToggles.noShapeshiftAnim, " Без анимации превращения");
 
-        CheatToggles.endlessSsDuration = GUILayout.Toggle(CheatToggles.endlessSsDuration, " Бесконечная длительность превращения");
+        CheatToggles.endlessSsDuration = GUILayout.Toggle(CheatToggles.endlessSsDuration, " Быть морфом вечно");
     }
 
     private void DrawCrewmate()
@@ -98,9 +98,9 @@ public class RolesTab : ITab
     {
         GUILayout.Label("Инженер", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.endlessVentTime = GUILayout.Toggle(CheatToggles.endlessVentTime, " Бесконечное время в вентиляции");
+        CheatToggles.endlessVentTime = GUILayout.Toggle(CheatToggles.endlessVentTime, " Бесконечное время в люке");
 
-        CheatToggles.noVentCooldown = GUILayout.Toggle(CheatToggles.noVentCooldown, " Без перезарядки вентиляции");
+        CheatToggles.noVentCooldown = GUILayout.Toggle(CheatToggles.noVentCooldown, " Без кд люка");
     }
 
     private void DrawScientist()
