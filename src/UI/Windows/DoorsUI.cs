@@ -62,14 +62,14 @@ public class DoorsUI : MonoBehaviour
 
             GUILayout.FlexibleSpace();
 
-            if (GUILayout.Button("Закрыть", GUIStylePreset.NormalButton, GUILayout.Width(50f)))
+            if (GUILayout.Button("Закр.", GUIStylePreset.NormalButton, GUILayout.Width(50f)))
             {
                 DoorsHandler.CloseDoorsInRoom(doorRoom);
             }
 
             if (map is MapNames.Polus or MapNames.Airship or MapNames.Fungle)
             {
-                if (GUILayout.Button("Открыть", GUIStylePreset.NormalButton, GUILayout.Width(50f)))
+                if (GUILayout.Button("Откр.", GUIStylePreset.NormalButton, GUILayout.Width(50f)))
                 {
                     DoorsHandler.OpenDoorsInRoom(doorRoom);
                 }
