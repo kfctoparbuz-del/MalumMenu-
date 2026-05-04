@@ -20,15 +20,15 @@ public static class PlayerControl_FixedUpdate
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.CmdCheckMurder))]
 public static class PlayerControl_CmdCheckMurder
 {
-    // Prefix patch of PlayerControl.CmdCheckMurder to always bypass checks when killing players
+    // Префикс-патч PlayerControl.CmdCheckMurder для всегдашнего обхода проверок при убийстве игроков
     public static bool Prefix(PlayerControl __instance, PlayerControl target)
     {
         /*if (Utils.isLobby){
-            HudManager.Instance.Notifier.AddDisconnectMessage("Killing in lobby disabled for being too buggy");
+            HudManager.Instance.Notifier.AddDisconnectMessage("Убийство в лобби отключено из-за слишком большого количества багов");
             return false;
         }
 
-        // Direct kill RPC should only be used when absolutely necessary as to avoid detection from anticheat mods
+        // Прямой RPC убийства следует использовать только когда абсолютно необходимо, чтобы избежать обнаружения модами-античитами
         if (!CheatToggles.killAnyone && !CheatToggles.zeroKillCd && !Utils.isVanished(__instance.Data) &&
             !Utils.isMeeting &&
             (MalumPPMCheats.oldRole == null ||
@@ -59,9 +59,9 @@ public static class PlayerControl_CmdCheckMurder
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.MurderPlayer))]
 public static class PlayerControl_MurderPlayer
 {
-    // Prefix patch of PlayerControl.MurderPlayer to log on ConsoleUI when a player tries to kill another player,
-    // along with who the killer and target are, and where the kill happened.
-    // Also logs when a kill gets saved by a guardian angel.
+    // Префикс-патч PlayerControl.MurderPlayer для логирования в ConsoleUI, когда игрок пытается убить другого игрока,
+    // а также кто убийца и жертва, и где произошло убийство.
+    // Также логирует, когда убийство предотвращено ангелом-хранителем.
     public static void Prefix(PlayerControl __instance, PlayerControl target)
     {
         if (!CheatToggles.logDeaths || target == null) return;
@@ -70,17 +70,17 @@ public static class PlayerControl_MurderPlayer
         var targetName = $"<color=#{ColorUtility.ToHtmlStringRGB(target.Data.Color)}>{target.CurrentOutfit.PlayerName}</color>";
 
         var room = Utils.GetRoomFromPosition(target.GetTruePosition());
-        var roomName = room != null ? room.RoomId.ToString() : "an unknown location";
+        var roomName = room != null ? room.RoomId.ToString() : "неизвестном месте";
 
         if (target.protectedByGuardianId != -1)
         {
-            ConsoleUI.Log(isDisguised ? $"{realKillerName} (as {displayKillerName}) tried to kill {targetName} in {roomName} (Protected)"
-                : $"{realKillerName} tried to kill {targetName} in {roomName} (Protected)");
+            ConsoleUI.Log(isDisguised ? $"{realKillerName} (как {displayKillerName}) попытался убить {targetName} в {roomName} (Защищён)"
+                : $"{realKillerName} попытался убить {targetName} в {roomName} (Защищён)");
         }
         else
         {
-            ConsoleUI.Log(isDisguised ? $"{realKillerName} (as {displayKillerName}) killed {targetName} in {roomName}"
-                : $"{realKillerName} killed {targetName} in {roomName}");
+            ConsoleUI.Log(isDisguised ? $"{realKillerName} (как {displayKillerName}) убил {targetName} в {roomName}"
+                : $"{realKillerName} убил {targetName} в {roomName}");
         }
     }
 }
@@ -88,7 +88,7 @@ public static class PlayerControl_MurderPlayer
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.TurnOnProtection))]
 public static class PlayerControl_TurnOnProtection
 {
-    // Prefix patch of PlayerControl.TurnOnProtection to make all protections visible
+    // Префикс-патч PlayerControl.TurnOnProtection для отображения всех защит
     public static void Prefix(ref bool visible)
     {
 		if (CheatToggles.seeGhosts)
@@ -101,7 +101,7 @@ public static class PlayerControl_TurnOnProtection
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.CmdCheckShapeshift))]
 public static class PlayerControl_CmdCheckShapeshift
 {
-    // Prefix patch of PlayerControl.CmdCheckShapeshift to prevent SS animation
+    // Префикс-патч PlayerControl.CmdCheckShapeshift для предотвращения анимации превращения
     public static void Prefix(ref bool shouldAnimate)
     {
         if (shouldAnimate && CheatToggles.noShapeshiftAnim)
@@ -114,7 +114,7 @@ public static class PlayerControl_CmdCheckShapeshift
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.CmdCheckRevertShapeshift))]
 public static class PlayerControl_CmdCheckRevertShapeshift
 {
-    // Prefix patch of PlayerControl.CmdCheckRevertShapeshift to prevent SS animation
+    // Префикс-патч PlayerControl.CmdCheckRevertShapeshift для предотвращения анимации превращения
     public static void Prefix(ref bool shouldAnimate){
 
         if (shouldAnimate && CheatToggles.noShapeshiftAnim)
@@ -127,8 +127,8 @@ public static class PlayerControl_CmdCheckRevertShapeshift
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.Shapeshift))]
 public static class PlayerControl_Shapeshift
 {
-    // Postfix patch of PlayerControl.Shapeshift to log on ConsoleUI when a player shapeshifts into another player,
-    // and who they shapeshifted into. Also logs when a shapeshift gets reverted.
+    // Постфикс-патч PlayerControl.Shapeshift для логирования в ConsoleUI, когда игрок превращается в другого игрока,
+    // и в кого именно он превратился. Также логирует, когда превращение отменено.
     public static void Postfix(PlayerControl __instance, PlayerControl targetPlayer, bool animate)
     {
         if (!CheatToggles.logShapeshifts) return;
@@ -140,12 +140,12 @@ public static class PlayerControl_Shapeshift
         if (targetPlayerInfo.PlayerId == __instance.Data.PlayerId)
         {
             ConsoleUI.Log($"<color=#{ColorUtility.ToHtmlStringRGB(GameData.Instance.GetPlayerById(__instance.PlayerId).Color)}>" +
-                          $"{GameData.Instance.GetPlayerById(__instance.PlayerId)._object.Data.PlayerName}</color> undid their shapeshift");
+                          $"{GameData.Instance.GetPlayerById(__instance.PlayerId)._object.Data.PlayerName}</color> отменил своё превращение");
         }
         else
         {
             ConsoleUI.Log($"<color=#{ColorUtility.ToHtmlStringRGB(GameData.Instance.GetPlayerById(__instance.PlayerId).Color)}>" +
-                          $"{GameData.Instance.GetPlayerById(__instance.PlayerId)._object.Data.PlayerName}</color> shapeshifted into " +
+                          $"{GameData.Instance.GetPlayerById(__instance.PlayerId)._object.Data.PlayerName}</color> превратился в " +
                           $"<color=#{ColorUtility.ToHtmlStringRGB(GameData.Instance.GetPlayerById(targetPlayerInfo.PlayerId).Color)}>" +
                           $"{GameData.Instance.GetPlayerById(targetPlayerInfo.PlayerId)._object.Data.PlayerName}</color>");
         }
@@ -155,8 +155,8 @@ public static class PlayerControl_Shapeshift
 [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.RpcSyncSettings))]
 public static class PlayerControl_RpcSyncSettings
 {
-    // Prefix patch of PlayerControl.RpcSyncSettings to prevent the anti-cheat from kicking you
-    // for some settings that are out of the "original" valid range
+    // Префикс-патч PlayerControl.RpcSyncSettings для предотвращения кика античитом
+    // за некоторые настройки, выходящие за пределы "оригинального" допустимого диапазона
     public static bool Prefix(PlayerControl __instance, byte[] optionsByteArray)
     {
         return !CheatToggles.noOptionsLimits;
