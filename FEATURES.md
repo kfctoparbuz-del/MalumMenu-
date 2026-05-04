@@ -1,179 +1,179 @@
-# 📋 Features
+# 📋 Функции
 
-## 👱 Player
+## 👱 Игрок
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| NoClip     | Allows you to walk through walls like a ghost | Toggle | Off
-| Boost Speed | Doubles your player's speed | Toggle | Off |
+| Проход сквозь стены | Позволяет проходить сквозь стены, как призрак | Переключатель | Выкл |
+| Ускорение | Удваивает скорость вашего игрока | Переключатель | Выкл |
 
-#### Murder
+#### Убийство
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| Kill Player | Select a player to kill them immediatly | Menu |
-| Kill All Crewmates | Kill all crewmates immediatly | Button |
-| Kill All Impostors | Kill all impostors immediatly | Button |
-| Kill All | Kill all players immediatly | Button |
+| Убить игрока | Выберите игрока, чтобы немедленно убить его | Меню |
+| Убить всех членов экипажа | Немедленно убить всех членов экипажа | Кнопка |
+| Убить всех самозванцев | Немедленно убить всех самозванцев | Кнопка |
+| Убить всех | Немедленно убить всех игроков | Кнопка |
 
-#### Teleport
+#### Телепортация
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| to Cursor | Teleport by right-clicking with your cursor. Works best with the ZoomOut cheat | Toggle | Off |
-| to Player | Teleport to a player's position by selecting them | Menu |
+| к курсору | Телепортация правым кликом мыши. Лучше всего работает с читом Отдалить | Переключатель | Выкл |
+| к игроку | Телепортация на позицию игрока путём его выбора | Меню |
 
 ## 👁️ ESP
 
-MalumMenu's ESP cheats are completely client-side, and thus undetectable by anticheat
+ESP-читы MalumMenu полностью клиентские, и поэтому не обнаруживаются античитом
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| See Roles | See every player's role through their nametag | Toggle | Off |
-| See Ghosts | Allows you to see ghosts, protections, and ghost chat even if you are alive | Toggle | Off
-| No Shadows | Removes all shadows, allowing you to see during blackouts and even through walls<br>Also, lets you see through spore clouds in the Fungle Jungle | Toggle | Off |
-| Reveal Votes | Reveals votes as they are being cast rather than at the end of the meeting<br>Also, lets you see colored votes even if votes are set to anonymous | Toggle | Off |
-| Always Chat | Keeps the chat icon always enabled, allowing you to chat at any time (even while not in a meeting or the lobby) | Toggle | Off |
+| Видеть роли | Видеть роль каждого игрока через его табличку с именем | Переключатель | Выкл |
+| Видеть призраков | Позволяет видеть призраков, защиты и чат призраков, даже если вы живы | Переключатель | Выкл |
+| Без теней | Убирает все тени, позволяя видеть во время отключений света и даже сквозь стены<br>Также позволяет видеть сквозь грибные облака в джунглях Fungle | Переключатель | Выкл |
+| Раскрывать голоса | Показывает голоса по мере их подачи, а не в конце собрания<br>Также позволяет видеть цветные голоса, даже если голосование анонимное | Переключатель | Выкл |
+| Всегда чат | Держит иконку чата всегда включённой, позволяя общаться в любое время (даже не во время собрания или в лобби) | Переключатель | Выкл |
 
-#### Camera
+#### Камера
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|--------|
+| Отдалить | Позволяет отдалять камеру игрока с помощью колёсика мыши | Переключатель | Выкл |
+| Наблюдение | Позволяет выбрать игрока за которым будет следить ваша камера | Меню |
+| Свободная камера | Позволяет свободно перемещать камеру без перемещения вашего игрока | Переключатель | Выкл |
+
+#### Трассеры
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|--------|
+| Члены экипажа | Показывает линии-трассеры для живых членов экипажа (цвет: голубой) | Переключатель | Выкл |
+| Самозванцы | Показывает линии-трассеры для живых самозванцев (цвет: красный) | Переключатель | Выкл |
+| Призраки | Показывает линии-трассеры для призраков (цвет: белый) | Переключатель | Выкл |
+| Трупы | Показывает линии-трассеры для трупов на земле (цвет: жёлтый) | Переключатель | Выкл |
+| По цвету | Меняет цвет линий-трассеров на цвет соответствующего игрока | Переключатель | Выкл |
+
+#### Мини-карта
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|--------|
+| Члены экипажа | Изменяет карту так, чтобы показывать позицию каждого живого члена экипажа (цвет: голубой) | Переключатель | Выкл |
+| Самозванцы | Изменяет карту так, чтобы показывать позицию каждого живого самозванца (цвет: красный) | Переключатель | Выкл |
+| Призраки | Изменяет карту так, чтобы показывать позицию каждого призрака (цвет: белый) | Переключатель | Выкл |
+| По цвету | Меняет цвет иконок на карте на цвет соответствующего игрока | Переключатель | Выкл |
+
+## 🎭 Роли
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Установить фальшивую роль | Изменить вашу текущую роль на любую желаемую<br>(Оборотень и Призрак отключены по умолчанию для предотвращения обнаружения античитом) | Меню |
+
+#### Самозванец
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Убивать кого угодно | Позволяет убивать кого угодно, независимо от защиты, самозванец ли он, ползёт ли в вентиляции или призрак | Переключатель | Выкл |
+| Без перезарядки убийства | Убирает задержку после убийств, позволяя спам-убивать сколько угодно | Переключатель | Выкл |
+| Дальность убийства | Позволяет убивать игроков независимо от того, как далеко они находятся на карте | Переключатель | Выкл |
+
+#### Призрак
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Убивать в невидимости | Позволяет убивать, находясь в невидимости | Переключатель | Выкл |
+
+#### Оборотень
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Без анимации превращения | Убирает анимацию превращения, делая его намного быстрее | Переключатель | Выкл |
+| Бесконечная длительность превращения | Позволяет оставаться в образе вечно | Переключатель | Выкл |
+
+#### Член экипажа
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Выполнить мои задачи | Немедленно выполнить все ваши задачи члена экипажа | Кнопка |
+
+#### Следопыт
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Бесконечное отслеживание | Позволяет отслеживать другого игрока вечно | Переключатель | Выкл |
+| Без задержки отслеживания | Убирает короткую задержку между отслеживаемым игроком и его иконкой на вашей карте слежения | Переключатель | Выкл |
+| Без перезарядки отслеживания | Убирает задержку после отслеживания кого-либо | Переключатель | Выкл |
+
+#### Инженер
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Бесконечное время в вентиляции | Позволяет оставаться в вентиляции вечно, несмотря на роль инженера | Переключатель | Выкл |
+| Без перезарядки вентиляции | Убирает задержку после выхода из вентиляции | Переключатель | Выкл |
+
+#### Учёный
+
+| Чит | Описание | Тип | По умолчанию |
+|------------|-------------|------|----|
+| Бесконечный аккумулятор | Батарея на панели виталов никогда не разрядится | Переключатель | Выкл |
+| Без перезарядки виталов | Убирает задержку после закрытия панели виталов | Переключатель | Выкл |
     
-| Cheat | Description | Type | Default|
-|------------|-------------|------|--------|
-| Zoom Out | Allows you to zoom-out the player's camera using your mouse's scrollwheel | Toggle | Off
-| Spectate | Allows you to pick a player to spectate with your camera | Menu |
-| Freecam | Allows you to freely move your camera around without also moving your player | Toggle | Off |
+## 🚀 Корабль
 
-#### Tracers
-
-| Cheat | Description | Type | Default|
-|------------|-------------|------|--------|
-| Crewmates | Shows tracer lines for alive crewmates (color: cyan) | Toggle | Off |
-| Impostors | Shows tracer lines for alive impostors (color: red) | Toggle | Off
-| Ghosts | Shows tracer lines for ghosts (color: white) | Toggle | Off |
-| Dead Bodies | Shows tracer lines for dead bodies on the ground (color: yellow) | Toggle | Off |
-| Color-based | Changes the color of tracer lines to the color of their players| Toggle | Off |
-
-#### Minimap
-
-| Cheat | Description | Type | Default|
-|------------|-------------|------|--------|
-| Crewmates | Changes the map so that it shows the position of every alive crewmate (color: cyan) | Toggle | Off |
-| Impostors | Changes the map so that it shows the position of every alive impostor (color: red) | Toggle | Off
-| Ghosts | Changes the map so that it shows the position of every ghost (color: white) | Toggle | Off |
-| Color-based | Changes the color of map icons to the color of their players | Toggle | Off |
-
-## 🎭 Roles
-
-| Cheat | Description | Type | Default |
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|----|
-| Set Fake Role | Change your current role to any role you want<br>(Shapeshifter & Phantom are disabled by default to prevent getting detected by the anticheat) | Menu |
+| Неисправимый свет | Полностью отключает свет (его нельзя починить вручную игроками)<br>Вы можете снова включить его, нажав на кнопку | Переключатель | Выкл |
+| Сообщить о теле | Заявить о любом игроке как о трупе, чтобы начать собрание | Кнопка |
+| Закрыть собрание | Принудительно закрывает окно собрания (только для вас), позволяя двигаться и взаимодействовать с игрой во время собраний | Кнопка |
 
-#### Impostor
+#### Саботаж
 
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Kill Anyone | Allows you to kill anyone, regardless if they are protected, impostors, crawling in a vent, or a ghost | Toggle | Off |
-| No Kill Cooldown | Removes the cooldown period after kills, allowing you to spam-kill as much as you please | Toggle | Off |
-| Kill Reach | Allows you to kill players regardless of how far they are on the map | Toggle | Off |
+Читы саботажа MalumMenu работают, даже если вы не самозванец, и не имеют задержки.
 
-#### Phantom
+Более того, разные саботажи можно включить одновременно, и они даже работают во время собраний.
 
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Kill While Vanished | Allows you to kill while invisible | Toggle | Off |
-
-#### Shapeshifter
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| No Ss Animation | Removes the shapeshift animation, making shapeshifting much quicker | Toggle | Off |
-| Endless Ss Duration | Allows you to remain shapeshifted forever | Toggle | Off |
-
-#### Crewmate
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Complete My Tasks | Complete all of your crewmate tasks immediatly | Button |
-
-#### Tracker
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Endless Tracking | Allows you to track another player forever | Toggle | Off |
-| No Track Delay | Removes the short delay between the tracked player and their icon on your tracker map | Toggle | Off |
-| No Track Cooldown | Removes the cooldown period after tracking someone | Toggle | Off |
-
-#### Engineer
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Endless Vent Time | Allows you to remain inside a vent forever despite being an engineer | Toggle | Off |
-| No Vent Cooldown | Removes the cooldown period after coming out of a vent | Toggle | Off |
-
-#### Scientist
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Endless Battery | The battery on your vitals panel will never run out | Toggle | Off |
-| No Vitals Cooldown | Removes the cooldown period after closing vitals panel  | Toggle | Off |
-    
-## 🚀 Ship
-
-| Cheat | Description | Type | Default |
-|------------|-------------|------|----|
-| Unfixable Lights | Disables lights completely (they cannot be fixed manually by players)<br>You can enable them again by clicking the button | Toggle | Off |
-| Report Body | Report any player as a dead body to start a meeting | Button |
-| Close Meeting | Forcefully closes the meeting window (only for you), allowing you to move and interact with the game during meetings | Button |
-
-#### Sabotage
-
-MalumMenu's Sabotage cheats work even if you aren't impostor and are subject to no cooldown.
-
-Moreover, different sabotages can be enabled at the same time, and they even work during meetings.
-
-| Cheat | Description | Type | 
+| Чит | Описание | Тип |
 |------------|-------------|------|
-| Reactor | Allows you to enable/disable Reactor sabotage | Toggle | Off |
-| Oxygen | Allows you to enable/disable Oxygen sabotage | Toggle | Off |
-| Lights | Allows you to enable/disable Lights sabotage | Toggle | Off |
-| Comms | Allows you to enable/disable Communications sabotage | Toggle | Off |
-| Doors | Immediatly locks all doors on the ship | Button |
-| MushroomMixup | Induces Mushroom Mixup sabotage on Fungle map | Button |
+| Реактор | Позволяет включить/выключить саботаж реактора | Переключатель |
+| Кислород | Позволяет включить/выключить саботаж кислорода | Переключатель |
+| Свет | Позволяет включить/выключить саботаж света | Переключатель |
+| Связь | Позволяет включить/выключить саботаж связи | Переключатель |
+| Двери | Немедленно запирает все двери на корабле | Кнопка |
+| Грибная неразбериха | Вызывает саботаж Грибной неразберихи на карте Fungle | Кнопка |
 
-#### Vents
+#### Вентиляция
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| UseVents | Allows you to use vents even if you are not an impostor or an engineer | Toggle | Off
-| KickVents | Forcefully kicks all players from vents | Button |
-| WalkInVents | Allows you to move and interact with the game even though you are inside of a vent<br>This gives you a sort of invisibility until you disable the setting and leave the vent<br>(*Some activites such as killing will forcefully make you visible again*) | Toggle | Off
+| Разблокировать вентиляцию | Позволяет использовать вентиляцию, даже если вы не самозванец и не инженер | Переключатель | Выкл |
+| Выгнать из вентиляции | Принудительно выгоняет всех игроков из вентиляции | Кнопка |
+| Ходить в вентиляции | Позволяет двигаться и взаимодействовать с игрой, находясь внутри вентиляции<br>Это даёт вам своего рода невидимость, пока вы не отключите настройку и не выйдете из вентиляции<br>(*Некоторые действия, такие как убийство, принудительно сделают вас снова видимым*) | Переключатель | Выкл |
 
-## 💤 Passive
+## 💤 Пассивные
 
-These cheats are constantly running in the background and **cannot be disabled to avoid problems.**
+Эти читы постоянно работают в фоновом режиме и **их нельзя отключить, чтобы избежать проблем.**
 
-| Cheat | Description | Type | Default|
+| Чит | Описание | Тип | По умолчанию |
 |------------|-------------|------|--------|
-| Free Cosmetics | Gives you access to all of the game's cosmetics for free, including:<br><br>- Hats<br>- Visors<br>- Skins<br>- Pets<br>- Nameplates<br>- Bundles<br>- Cosmicubes | Toggle | On |
-| Avoid Penalties | Removes the penalty you receive when disconnecting from games early | Toggle | On |
-| Unlock Extra Features | Unlocks many of the game's special features automatically, including:<br><br>- Freechat<br>- Friend list<br>- Custom name<br>- Online gameplay | Toggle | On |
+| Бесплатная косметика | Даёт вам бесплатный доступ ко всей косметике игры, включая:<br><br>- Головные уборы<br>- Забрала<br>- Скины<br>- Питомцы<br>- Таблички с именами<br>- Наборы<br>- Cosmicubes | Переключатель | Вкл |
+| Избегать наказаний | Убирает наказание, которое вы получаете при раннем отключении от игр | Переключатель | Вкл |
+| Разблокировать дополнительные функции | Автоматически разблокирует многие специальные функции игры, включая:<br><br>- Свободный чат<br>- Список друзей<br>- Пользовательское имя<br>- Онлайн-игру | Переключатель | Вкл |
 
-## 📃 Config
+## 📃 Конфигурация
 
-You can change all of the following settings in `BepInEx/config/MalumMenu.cfg`
+Вы можете изменить все следующие настройки в `BepInEx/config/MalumMenu.cfg`
 
-| Config          | Description                                                                                                                                                         | Type   | Default |
+| Настройка       | Описание                                                                                                                                                         | Тип    | По умолчанию |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|---------|
-| GuestMode.GuestMode | When enabled, a new guest account will generate every time you start the game<br><br>Allows you to bypass account bans and PUID detection | Boolean | false |
-| GuestMode.FriendName | The username that will be used when setting a friend code for your guest account<br><br>**IMPORTANT**: <br>- Can only be used with GuestMode<br>- Needs to be ≤ 10 characters<br>- Cannot include special characters/discriminator (#1234) | String |  |
-| GUI.Keybind | Specifies the keyboard key that toggles the GUI on/off<br><br>**IMPORTANT**: You may only use keycodes from this [list](https://docs.unity3d.com/Packages/com.unity.tiny@0.16/api/Unity.Tiny.Input.KeyCode.html) | String | Delete |
-| GUI.Color | Sets the color of MalumMenu's GUI using HTML color codes | String | |
-| Privacy.HideDeviceId | When enabled, it will hide your unique deviceId from Among Us<br><br>Could **potentially** help bypass hardware bans in the future | Boolean | true |
-| Privacy.NoTelemetry | When enabled, it will stop Among Us from collecting analytics of your games using Unity Analytics and sending them to Innersloth | Boolean | true |
-| Spoofing.Level | Sets a custom player level to display to others in online games, masking your real level<br><br>**IMPORTANT**: Only integers between 0 and 4294967295 are valid. Decimal values are not accepted | String | |
-| Spoofing.Platform | Sets a different gaming platform in online lobbies to disguise your actual platform<br><br>**IMPORTANT**: You may only use platform names from this [list](https://skeld.js.org/enums/constant.Platform.html) | String | |
+| GuestMode.GuestMode | При включении каждый раз при запуске игры будет создаваться новый гостевой аккаунт<br><br>Позволяет обходить баны аккаунтов и обнаружение PUID | Логическое | false |
+| GuestMode.FriendName | Имя пользователя, которое будет использоваться при установке кода друга для вашего гостевого аккаунта<br><br>**ВАЖНО**: <br>- Можно использовать только с GuestMode<br>- Должно быть ≤ 10 символов<br>- Не может включать специальные символы/дискриминатор (#1234) | Строка |  |
+| GUI.Keybind | Определяет клавишу клавиатуры для включения/выключения GUI<br><br>**ВАЖНО**: Можно использовать только коды клавиш из этого [списка](https://docs.unity3d.com/Packages/com.unity.tiny@0.16/api/Unity.Tiny.Input.KeyCode.html) | Строка | Delete |
+| GUI.Color | Устанавливает цвет GUI MalumMenu с помощью HTML-цветовых кодов | Строка | |
+| Privacy.HideDeviceId | При включении будет скрывать ваш уникальный deviceId от Among Us<br><br>**Потенциально** может помочь обойти аппаратные баны в будущем | Логическое | true |
+| Privacy.NoTelemetry | При включении остановит сбор аналитики ваших игр Among Us с помощью Unity Analytics и их отправку в Innersloth | Логическое | true |
+| Spoofing.Level | Устанавливает пользовательский уровень игрока для отображения другим в онлайн-играх, скрывая ваш реальный уровень<br><br>**ВАЖНО**: Допустимы только целые числа от 0 до 4294967295. Десятичные значения не принимаются | Строка | |
+| Spoofing.Platform | Устанавливает другую игровую платформу в онлайн-лобби, чтобы скрыть вашу реальную платформу<br><br>**ВАЖНО**: Можно использовать только названия платформ из этого [списка](https://skeld.js.org/enums/constant.Platform.html) | Строка | |
 
-## Other relevant features of MalumMenu:
+## Другие важные функции MalumMenu:
 
-- MalumMenu has a simple **GUI** that is easy to navigate and can be toggled using the **DELETE** key on your keyboard
-- [**TEMPORARILY BROKEN**] MalumMenu comes with **custom announcements** that it will automatically fetch online at launch.
+- MalumMenu имеет простой **GUI**, который легко использовать и можно включить/выключить клавишей **DELETE** на клавиатуре
+- [**ВРЕМЕННО СЛОМАНО**] MalumMenu поставляется с **пользовательскими объявлениями**, которые автоматически загружаются онлайн при запуске.
