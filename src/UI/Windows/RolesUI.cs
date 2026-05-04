@@ -12,7 +12,7 @@ public class RolesUI : MonoBehaviour
 
     private void Start()
     {
-        // Instantiate 2D area of RolesUI
+        // Создание 2D области интерфейса ролей
         _windowRect = new(
             Screen.width / 2f - windowWidth / 2f,
             Screen.height / 2f - windowHeight / 2f,
@@ -27,7 +27,7 @@ public class RolesUI : MonoBehaviour
 
         UIHelpers.ApplyUIColor();
 
-        _windowRect = GUI.Window((int)WindowId.RolesUI, _windowRect, (GUI.WindowFunction)RolesWindow, "Assign Roles");
+        _windowRect = GUI.Window((int)WindowId.RolesUI, _windowRect, (GUI.WindowFunction)RolesWindow, "Назначить роли");
     }
 
     private void RolesWindow(int windowID)
@@ -47,11 +47,11 @@ public class RolesUI : MonoBehaviour
             GUILayout.Label($"{CheatToggles.forcedRole}");
             GUILayout.FlexibleSpace();
 
-            if (GUILayout.Button("Reset", GUILayout.Width(80f)))
+            if (GUILayout.Button("Сбросить", GUILayout.Width(80f)))
             {
                 CheatToggles.forcedRole = null;
             }
-            if (GUILayout.Button("Assign", GUILayout.Width(80f)))
+            if (GUILayout.Button("Назначить", GUILayout.Width(80f)))
             {
                 CheatToggles.forceRole = true;
             }
@@ -62,7 +62,7 @@ public class RolesUI : MonoBehaviour
 
         GUILayout.EndScrollView();
         GUILayout.EndVertical();
-        GUILayout.Label("Roles will be assigned on next game start");
+        GUILayout.Label("Роли будут назначены при следующем запуске игры");
         GUI.DragWindow();
     }
 }
