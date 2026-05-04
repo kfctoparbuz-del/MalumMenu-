@@ -4,7 +4,7 @@ namespace MalumMenu;
 
 public class ConsoleTab : ITab
 {
-    public string name => "Console";
+    public string name => "Консоль";
 
     public void Draw()
     {
@@ -17,12 +17,12 @@ public class ConsoleTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.showConsole = GUILayout.Toggle(CheatToggles.showConsole, " Show Console");
+        CheatToggles.showConsole = GUILayout.Toggle(CheatToggles.showConsole, " Показать консоль");
 
-        CheatToggles.logDeaths = GUILayout.Toggle(CheatToggles.logDeaths, " Log Deaths");
+        CheatToggles.logDeaths = GUILayout.Toggle(CheatToggles.logDeaths, " Логировать смерти");
 
-        CheatToggles.logShapeshifts = GUILayout.Toggle(CheatToggles.logShapeshifts, " Log Shapeshifts");
+        CheatToggles.logShapeshifts = GUILayout.Toggle(CheatToggles.logShapeshifts, " Логировать превращения");
 
-        CheatToggles.logVents = GUILayout.Toggle(CheatToggles.logVents, " Log Vents");
+        CheatToggles.logVents = GUILayout.Toggle(CheatToggles.logVents, " Логировать вход/выход из вентиляции");
     }
 }
