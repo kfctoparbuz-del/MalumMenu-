@@ -4,7 +4,7 @@ namespace MalumMenu;
 
 public class HostOnlyTab : ITab
 {
-    public string name => "Только для хоста";
+    public string name => "Читы для хоста";
 
     public void Draw()
     {
@@ -78,7 +78,7 @@ public class HostOnlyTab : ITab
 
         CheatToggles.skipMeeting = GUILayout.Toggle(CheatToggles.skipMeeting, " Пропустить собрание");
 
-        CheatToggles.voteImmune = GUILayout.Toggle(CheatToggles.voteImmune, " Неуязвимость к голосованию");
+        CheatToggles.voteImmune = GUILayout.Toggle(CheatToggles.voteImmune, " Неуязвимость к кику");
 
         CheatToggles.ejectPlayer = GUILayout.Toggle(CheatToggles.ejectPlayer, " Выгнать игрока");
     }
