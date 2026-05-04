@@ -17,7 +17,7 @@ public class ConsoleUI : MonoBehaviour
 
     private void Start()
     {
-        // Instantiate 2D area of ConsoleUI
+        // Создание 2D области интерфейса консоли
         _windowRect = new(
             Screen.width / 2f - windowWidth / 2f,
             Screen.height / 2f - windowHeight / 2f,
@@ -37,7 +37,7 @@ public class ConsoleUI : MonoBehaviour
 
         UIHelpers.ApplyUIColor();
 
-        _windowRect = GUI.Window((int)WindowId.ConsoleUI, _windowRect, (GUI.WindowFunction)ConsoleWindow, "Console");
+        _windowRect = GUI.Window((int)WindowId.ConsoleUI, _windowRect, (GUI.WindowFunction)ConsoleWindow, "Консоль");
     }
 
     private void ConsoleWindow(int windowID)
@@ -57,12 +57,12 @@ public class ConsoleUI : MonoBehaviour
 
         GUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("Clear Log", GUILayout.Width(260)))
+        if (GUILayout.Button("Очистить лог", GUILayout.Width(260)))
         {
             _logEntries.Clear();
         }
 
-        if (GUILayout.Button("Copy Log to Clipboard"))
+        if (GUILayout.Button("Копировать лог в буфер обмена"))
         {
             GUIUtility.systemCopyBuffer = String.Join("\n", _logEntries.ToArray());
         }
@@ -74,14 +74,14 @@ public class ConsoleUI : MonoBehaviour
 
     public static void Log(string message)
     {
-        if (_logEntries.Count >= MaxLogEntries) // Limit the number of logs to keep memory usage in check
+        if (_logEntries.Count >= MaxLogEntries) // Ограничение количества записей в логе для контроля использования памяти
         {
-            _logEntries.RemoveAt(0); // Remove the oldest log entry
+            _logEntries.RemoveAt(0); // Удаление самой старой записи лога
         }
 
         _logEntries.Add(message);
 
-        // Scroll to the bottom
+        // Прокрутка вниз
         _scrollPosition.y = float.MaxValue;
     }
 }
