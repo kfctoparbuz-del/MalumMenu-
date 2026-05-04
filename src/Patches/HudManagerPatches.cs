@@ -6,13 +6,13 @@ namespace MalumMenu;
 [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
 public static class HudManager_Start
 {
-	// Postfix patch of HudManager.Start to give minimap access to impostors too
+	// Постфикс-патч HudManager.Start для предоставления доступа к мини-карте также и самозванцам
 	public static void Postfix(HudManager __instance)
 	{
-		__instance.MapButton.OnClick.RemoveAllListeners(); // Remove previous OnClick action
+		__instance.MapButton.OnClick.RemoveAllListeners(); // Удалить предыдущее действие OnClick
 
-		// Always open normal map when map button is clicked
-		// To access sabotage map, sabotage button can be used
+		// Всегда открывать обычную карту при нажатии кнопки карты
+		// Для доступа к карте саботажа можно использовать кнопку саботажа
 		__instance.MapButton.OnClick.AddListener((Action) (() =>
         {
 			__instance.ToggleMapVisible(new MapOptions
@@ -29,9 +29,9 @@ public static class HudManager_Update
 {
 	public static void Postfix(HudManager __instance)
     {
-		__instance.ShadowQuad.gameObject.SetActive(!MalumESP.IsFullbrightActive()); // Fullbright
+		__instance.ShadowQuad.gameObject.SetActive(!MalumESP.IsFullbrightActive()); // Полная яркость
 
-		if (Utils.IsChatUiActive()) // AlwaysChat
+		if (Utils.IsChatUiActive()) // Всегда чат
 		{
 			__instance.Chat.gameObject.SetActive(true);
 		}
@@ -45,7 +45,7 @@ public static class HudManager_Update
 		MalumESP.ZoomOut(__instance);
 		MalumESP.FreecamCheat();
 
-		// Close PlayerPickMenu if there is no PPM cheat enabled
+		// Закрыть меню выбора игрока, если нет включенного чита PPM
 		if (PlayerPickMenu.playerpickMenu != null && CheatToggles.ShouldPPMClose())
 		{
             PlayerPickMenu.playerpickMenu.Close();
