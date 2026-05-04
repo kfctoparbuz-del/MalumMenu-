@@ -181,6 +181,7 @@ public class MenuUI : MonoBehaviour
             CheatToggles.skipMeeting = false;
             CheatToggles.ejectPlayer = false;
         }
+        MalumPPMCheats.AlwaysImpostorCheck();
     }
 
     public void OnGUI()
