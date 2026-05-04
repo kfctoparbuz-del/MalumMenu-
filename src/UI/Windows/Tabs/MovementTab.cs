@@ -5,7 +5,7 @@ namespace MalumMenu;
 
 public class MovementTab : ITab
 {
-    public string name => "Movement";
+    public string name => "Движение";
 
     public void Draw()
     {
@@ -22,9 +22,9 @@ public class MovementTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.noClip = GUILayout.Toggle(CheatToggles.noClip, " NoClip");
+        CheatToggles.noClip = GUILayout.Toggle(CheatToggles.noClip, " Проход сквозь стены");
 
-        CheatToggles.invertControls = GUILayout.Toggle(CheatToggles.invertControls, " Invert Controls");
+        CheatToggles.invertControls = GUILayout.Toggle(CheatToggles.invertControls, " Инвертировать управление");
 
         try
         {
@@ -32,23 +32,23 @@ public class MovementTab : ITab
             {
                 PlayerControl.LocalPlayer.MyPhysics.GhostSpeed = GUILayout.HorizontalSlider(PlayerControl.LocalPlayer.MyPhysics.GhostSpeed, 0f, 20f, GUILayout.Width(250f));
                 Utils.SnapSpeedToDefault(0.05f, true);
-                GUILayout.Label($"Current Speed: {PlayerControl.LocalPlayer?.MyPhysics.GhostSpeed} {(Utils.IsSpeedDefault(true) ? "(Default)" : "")}");
+                GUILayout.Label($"Текущая скорость: {PlayerControl.LocalPlayer?.MyPhysics.GhostSpeed} {(Utils.IsSpeedDefault(true) ? "(По умолчанию)" : "")}");
             }
             else
             {
                 PlayerControl.LocalPlayer.MyPhysics.Speed = GUILayout.HorizontalSlider(PlayerControl.LocalPlayer.MyPhysics.Speed, 0f, 20f, GUILayout.Width(250f));
                 Utils.SnapSpeedToDefault(0.05f);
-                GUILayout.Label($"Current Speed: {PlayerControl.LocalPlayer?.MyPhysics.Speed} {(Utils.IsSpeedDefault() ? "(Default)" : "")}");
+                GUILayout.Label($"Текущая скорость: {PlayerControl.LocalPlayer?.MyPhysics.Speed} {(Utils.IsSpeedDefault() ? "(По умолчанию)" : "")}");
             }
         } catch (NullReferenceException) {}
     }
 
     private void DrawTeleport()
     {
-        GUILayout.Label("Teleport", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Телепортация", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.teleportCursor = GUILayout.Toggle(CheatToggles.teleportCursor, " to Cursor");
+        CheatToggles.teleportCursor = GUILayout.Toggle(CheatToggles.teleportCursor, " к курсору");
 
-        CheatToggles.teleportPlayer = GUILayout.Toggle(CheatToggles.teleportPlayer, " to Player");
+        CheatToggles.teleportPlayer = GUILayout.Toggle(CheatToggles.teleportPlayer, " к игроку");
     }
 }
