@@ -6,7 +6,7 @@ namespace MalumMenu;
 [HarmonyPatch(typeof(Vent), nameof(Vent.CanUse))]
 public static class Vent_CanUse
 {
-    // Postfix patch of Vent.CanUse to allow usage of vents when useVents cheat is enabled
+    // Постфикс-патч Vent.CanUse для разрешения использования вентиляции, когда включён чит unlockVents
     public static void Postfix(Vent __instance, NetworkedPlayerInfo pc, ref bool canUse, ref bool couldUse, ref float __result)
     {
         if (!PlayerControl.LocalPlayer || !PlayerControl.LocalPlayer.Data) return;
@@ -19,7 +19,7 @@ public static class Vent_CanUse
         var position = __instance.transform.position;
         var num = Vector2.Distance(center, position);
 
-        // Allow usage of vents unless the vent is too far or there are objects blocking the player's path
+        // Разрешить использование вентиляции, если вентиляция не слишком далеко и нет объектов, блокирующих путь игрока
         canUse = num <= __instance.UsableDistance && !PhysicsHelpers.AnythingBetween(@object.Collider, center, position, Constants.ShipOnlyMask, false);
         couldUse = true;
         __result = num;
@@ -29,27 +29,27 @@ public static class Vent_CanUse
 [HarmonyPatch(typeof(Vent), nameof(Vent.EnterVent))]
 public static class Vent_EnterVent
 {
-    // Postfix patch of Vent.EnterVent to log on ConsoleUI when a player enters a vent
-    // along with the room they entered it in
+    // Постфикс-патч Vent.EnterVent для логирования в ConsoleUI, когда игрок заходит в вентиляцию,
+    // а также комнаты, в которой он это сделал
     public static void Postfix(Vent __instance, PlayerControl pc)
     {
         if (!CheatToggles.logVents || !Utils.isShip) return;
 
         var (realPlayerName, displayPlayerName, isDisguised) = Utils.GetPlayerIdentity(pc);
         var room = Utils.GetRoomFromPosition(__instance.transform.position); //- (Vector3) pc.Collider.offset);
-        var roomName = room != null ? room.RoomId.ToString() : "an unknown location";
+        var roomName = room != null ? room.RoomId.ToString() : "неизвестном месте";
 
         ConsoleUI.Log(isDisguised
-            ? $"{realPlayerName} (as {displayPlayerName}) entered a vent in {roomName}"
-            : $"{realPlayerName} entered a vent in {roomName}");
+            ? $"{realPlayerName} (как {displayPlayerName}) зашёл(а) в вентиляцию в {roomName}"
+            : $"{realPlayerName} зашёл(а) в вентиляцию в {roomName}");
     }
 }
 
 [HarmonyPatch(typeof(Vent), nameof(Vent.ExitVent))]
 public static class Vent_ExitVent
 {
-    // Postfix patch of Vent.ExitVent to log on ConsoleUI when a player exits a vent
-    // along with the room they exited it in
+    // Постфикс-патч Vent.ExitVent для логирования в ConsoleUI, когда игрок выходит из вентиляции,
+    // а также комнаты, в которой он это сделал
     public static void Postfix(Vent __instance, PlayerControl pc)
     {
         if (!CheatToggles.logVents || !Utils.isShip) return;
@@ -57,10 +57,10 @@ public static class Vent_ExitVent
         var (realPlayerName, displayPlayerName, isDisguised) = Utils.GetPlayerIdentity(pc);
 
         var room = Utils.GetRoomFromPosition(__instance.transform.position); //- (Vector3) pc.Collider.offset);
-        var roomName = room != null ? room.RoomId.ToString() : "an unknown location";
+        var roomName = room != null ? room.RoomId.ToString() : "неизвестном месте";
 
         ConsoleUI.Log(isDisguised
-            ? $"{realPlayerName} (as {displayPlayerName}) exited a vent in {roomName}"
-            : $"{realPlayerName} exited a vent in {roomName}");
+            ? $"{realPlayerName} (как {displayPlayerName}) вышел(а) из вентиляции в {roomName}"
+            : $"{realPlayerName} вышел(а) из вентиляции в {roomName}");
     }
 }
