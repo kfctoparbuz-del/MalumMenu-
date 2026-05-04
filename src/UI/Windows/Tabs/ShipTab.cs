@@ -39,7 +39,7 @@ public class ShipTab : ITab
 
         CheatToggles.closeMeeting = GUILayout.Toggle(CheatToggles.closeMeeting, " Закрыть собрание");
 
-        CheatToggles.autoOpenDoorsOnUse = GUILayout.Toggle(CheatToggles.autoOpenDoorsOnUse, " Авто-открытие дверей при использовании");
+        CheatToggles.autoOpenDoorsOnUse = GUILayout.Toggle(CheatToggles.autoOpenDoorsOnUse, " Открытие дверей при использовании");
     }
 
     private void DrawSabotage()
@@ -67,10 +67,10 @@ public class ShipTab : ITab
     {
         GUILayout.Label("Вентиляция", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.unlockVents = GUILayout.Toggle(CheatToggles.unlockVents, " Разблокировать вентиляцию");
+        CheatToggles.unlockVents = GUILayout.Toggle(CheatToggles.unlockVents, " Разблокировать люк");
 
-        CheatToggles.kickVents = GUILayout.Toggle(CheatToggles.kickVents, " Выгнать всех из вентиляции");
+        CheatToggles.kickVents = GUILayout.Toggle(CheatToggles.kickVents, " Выгнать всех из люка");
 
-        CheatToggles.walkInVents = GUILayout.Toggle(CheatToggles.walkInVents, " Ходить в вентиляции");
+        CheatToggles.walkInVents = GUILayout.Toggle(CheatToggles.walkInVents, " Ходить в люке");
     }
 }
