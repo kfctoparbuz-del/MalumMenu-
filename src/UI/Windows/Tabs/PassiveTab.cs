@@ -4,7 +4,7 @@ namespace MalumMenu;
 
 public class PassiveTab : ITab
 {
-    public string name => "Passive";
+    public string name => "Пассивные";
 
     public void Draw()
     {
@@ -17,14 +17,14 @@ public class PassiveTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.freeCosmetics = GUILayout.Toggle(CheatToggles.freeCosmetics, " Free Cosmetics");
+        CheatToggles.freeCosmetics = GUILayout.Toggle(CheatToggles.freeCosmetics, " Бесплатная косметика");
 
-        CheatToggles.avoidPenalties = GUILayout.Toggle(CheatToggles.avoidPenalties, " Avoid Penalties");
+        CheatToggles.avoidPenalties = GUILayout.Toggle(CheatToggles.avoidPenalties, " Избегать наказаний");
 
-        CheatToggles.unlockFeatures = GUILayout.Toggle(CheatToggles.unlockFeatures, " Unlock Extra Features");
+        CheatToggles.unlockFeatures = GUILayout.Toggle(CheatToggles.unlockFeatures, " Разблокировать дополнительные функции");
 
-        CheatToggles.copyLobbyCodeOnDisconnect = GUILayout.Toggle(CheatToggles.copyLobbyCodeOnDisconnect, " Copy Lobby Code on Disconnect");
+        CheatToggles.copyLobbyCodeOnDisconnect = GUILayout.Toggle(CheatToggles.copyLobbyCodeOnDisconnect, " Копировать код лобби при отключении");
 
-        CheatToggles.spoofAprilFoolsDate = GUILayout.Toggle(CheatToggles.spoofAprilFoolsDate, " Spoof Date to April 1st");
+        CheatToggles.spoofAprilFoolsDate = GUILayout.Toggle(CheatToggles.spoofAprilFoolsDate, " Подменить дату на 1 апреля");
     }
 }
