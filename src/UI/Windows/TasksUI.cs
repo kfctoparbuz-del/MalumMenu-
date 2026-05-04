@@ -127,7 +127,7 @@ public class TasksUI : MonoBehaviour
 
         GUILayout.EndScrollView();
 
-        if (GUILayout.Button("Выполнить мои задачи", GUIStylePreset.NormalButton))
+        if (GUILayout.Button("Выполнить таски", GUIStylePreset.NormalButton))
         {
             CheatToggles.completeMyTasks = true;
         }
