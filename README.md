@@ -1,207 +1,95 @@
-<p align="center">
-  <img src="https://scp222thj.dev/static/images/malumLogo.png">
-</p>
 
-<p align="center">
-  <a href="https://discord.gg/YYcYf88jAb">
-    <img hspace="6" src="https://img.shields.io/badge/Join%20Us%20on-Discord-blue?style=flat&logo=discord" alt="Discord">
-  </a>
-
-  <a href="https://ko-fi.com/scp222thj">
-    <img hspace="6" src="https://img.shields.io/badge/Support%20scp222thj-Ko--fi-ff5f5f?style=flat&logo=ko-fi" alt="Ko-fi">
-  </a>
-
-  <a href="https://github.com/astra1dev#%EF%B8%8F-support-me">
-    <img hspace="6" src="https://img.shields.io/badge/Support%20astra1dev-Monero-FF6600?style=flat&logo=monero" alt="Monero">
-  </a>
-
-  <a href="https://github.com/scp222thj/MalumMenu/releases">
-    <img hspace="6" src="https://img.shields.io/github/downloads/scp222thj/MalumMenu/total?style=flat&logo=github&label=Total%20Downloads&color=2ECC71" alt="Downloads">
-  </a>
-</p>
-
-<p align="center">
-  <b>Простое в использовании меню читов для Among Us с простым графическим интерфейсом и множеством полезных модулей.</b>
-</p>
-
-<!-- omit in toc -->
-# 😎 Table Of Contents
-
-- [🎁 Релизы](#-releases)
-- [⬇️ Установка](#️-installation)
-  - [🪟 Windows](#-windows)
-  - [🐧 Linux](#-linux)
-- [📋 Фичи \ функции](#-features)
-- [❓ Вопросы](#-faq)
-- [⚠️ Дисклеймер](#️-disclaimer)
-
-# 🎁 Releases
-
-| Mod Version| Among Us - Version | Link |
-|----------|-------------|-----------------|
-| v3.1.0 | 17.3 ( 2026.3.31 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.1.0) |
-| v3.0.2 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.2) |
-| v3.0.1 | 17.2.2 ( 2026.3.17 )<br>17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.1) |
-| v3.0.0 | 17.2.1 ( 2026.2.24 ) | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v3.0.0) |
-| v2.4.2 | 2024.9.4 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.2) |
-| v2.4.1 | 2024.8.13 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.1) |
-| v2.4.0 | 2024.6.18 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.4.0) |
-| v2.3.1 | 2024.6.18 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.1) |
-| v2.3.0 | 2024.6.4 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.3.0) |
-| v2.2.0 | 2024.3.5 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.2.0) |
-| v2.1.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.1.0) |
-| v2.0.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v2.0.0) |
-| v1.2.1 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.1) |
-| v1.2.0 | 2023.11.28 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.2.0) |
-| v1.1.2 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.2) |
-| v1.1.1 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.1) |
-| v1.1.0 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.1.0) |
-| v1.0.0 | 2023.7.12<br>2023.7.11 | [Установить](https://github.com/scp222thj/MalumMenu/releases/tag/v1.0.0) |
-
-# ⬇️ Installation
-
-## 🪟 Windows
-
-1. Download the latest **MalumMenu zip pack** from [here](https://github.com/scp222thj/MalumMenu/releases/latest).
-    - **For Steam or Itch.io:** Download `MalumMenu-VERSION-Steam-Itch.zip`.
-    - **For Microsoft Store, Epic Games Store, or Xbox App:** Download `MalumMenu-VERSION-MicrosoftStore-EpicGames-XboxApp.zip`.
-
-2. Open the zip file you have just downloaded and copy all its contents.
-
-3. Paste these files directly into your Among Us game folder:
-    - **Steam:** Right-click Among Us in your Library → Click `Manage` → Click `Browse local files`.
-    - **Epic Launcher:** Right-click Among Us in your Library → Click `Manage` → Click the folder icon in the `Installation` box.
-    - **Itch.io:** Open the Itch.io app → Right-click Among Us in your Library → Click `Manage` → Click `Open folder in Explorer`.
-   - **Microsoft Store:** Open the folder where Windows apps are installed (typically `C:\Program Files\WindowsApps\`) by following the tutorial [here](https://youtu.be/qCeoEIy_vrw) → In File Explorer, use the search bar to search for `Among Us.exe` → Right-click the `Among Us.exe` result → Select `Open file location`.
-    - **Xbox App:** Right-click Among Us in your Library → Click `Manage` → Open the `FILES` tab → Click `BROWSE...` → Open the `Among Us` folder → Open the `Content` folder.
-
-4. Launch Among Us as you normally would. You should see a console window appear, installing the mod's requirements.
-
-5. Wait for the console window to finish the installation.
-
-6. After installation, Among Us will automatically open with MalumMenu successfully installed.
-    - By default, you can toggle the cheat GUI on by pressing **DELETE** on your keyboard.
-
-7. If the installation doesn't work, check out our [FAQ](#-faq).
-
-## 🐧 Linux
-
-1. Run Among Us under **Proton (or Wine)**.
-   - **In Steam:** Right-click Among Us in your Library → Click `Properties` → Click `Compatibility` → Enable `Force the use of a specific Steam Play compatibility tool`.
-
-   - Test different Proton versions if you're having issues launching the game.
-
-2. Set up **BepInEx** (the framework MalumMenu is built upon).
-   - Follow the official Proton / Wine setup guide found [here](https://docs.bepinex.dev/articles/advanced/proton_wine.html).
-   - If you are using Proton with Steam, specify the DLL override:
-     - **In Steam:** Right-click Among Us in your Library → Click `Properties` → Click `General` → Click `Launch Options`.
-     - Add this to your launch options:
-
-       ```
-       WINEDLLOVERRIDES="winhttp.dll=n,b" %command%
-       ```
-
-   - After that, continue with the Windows installation steps found [here](#-windows).
-
-3. Fix crashes or errors (like `Unable to execute IL2CPP chainloader`).
-   - **In Steam:** Right-click Among Us in your Library → Click `Properties` → Click `General` → Click `Launch Options`.
-   - Set your launch options to:
-
-     ```
-     PROTON_NO_ESYNC=1 PROTON_USE_WINED3D=1 WINEDLLOVERRIDES="winhttp.dll=n,b" %command%
-     ```
-
-# 📋 Features
+# 📋 Фичи / функции
 
 <img alt="image" src="https://scp222thj.dev/static/images/malumIngame.png">
 
-- An intuitive GUI with our latest, greatest Among Us cheats
-- See ghosts & reveal the impostors
-- Track every player's position using the minimap
-- Teleport anywhere you want
-- Change your role whenever you please
-- Remove kill cooldown & spam-kill everyone
-- Murder any distant player from across the map
-- Unlock all of the game's cosmetics for FREE
-- No more annoying disconnect penalties
+- Интуитивно понятный GUI с нашими новейшими и лучшими читами для Among Us
+- Видеть призраков и раскрывать самозванцев
+- Отслеживать позицию каждого игрока с помощью мини-карты
+- Телепортироваться куда угодно
+- Менять свою роль когда захотите
+- Убрать перезарядку убийства и спам-убивать всех
+- Убивать любого игрока с другого конца карты
+- Разблокировать всю косметику в игре БЕСПЛАТНО
+- Боль никаких надоедливых наказаний за отключение
 
-For a complete list of all of MalumMenu's features, click [here](https://github.com/scp222thj/MalumMenu/blob/main/FEATURES.md)
+Полный список всех функций MalumMenu смотрите [здесь](https://github.com/scp222thj/MalumMenu/blob/main/FEATURES.md)
 
-# ❓ FAQ
+# ❓ Вопросы
 
-Click to expand each topic
+Нажмите, чтобы развернуть каждый раздел
 
 <details>
 
-<summary><h2>❗ I'm having issues installing MalumMenu</h2></summary>
+<summary><h2>❗ У меня проблемы с установкой MalumMenu</h2></summary>
 
-First of all, make sure you are running the most recent version of Among Us (`17.3` / `2026.3.31`) with the most recent version of MalumMenu (`v3.1.0`).
+Прежде всего, убедитесь, что вы используете последнюю версию Among Us (`17.3` / `2026.3.31`) с последней версией MalumMenu (`v3.1.0`).
 
-Also, check if your platform is officially supported:
+Также проверьте, официально ли поддерживается ваша платформа:
 
 - ✅ Steam
 - ✅ Itch.io
 - ✅ Epic Games Launcher
 - ✅ Microsoft Store
 - ✅ Xbox App
-- ❔ Cracked (rarely works)
-- ❌ iOS App Store & Google Play
-- ❌ PS & Switch & Xbox Console
+- ❔ Пиратка (редко работает)
+- ❌ iOS App Store и Google Play
+- ❌ PS и Switch и Xbox Консоль
 
-Now ensure that you have downloaded the correct zip file for your platform:
-- **For Steam or Itch.io:** Download `MalumMenu-VERSION-Steam-Itch.zip`
-- **For Microsoft Store, Epic Games Store, or Xbox App:** Download `MalumMenu-VERSION-MicrosoftStore-EpicGames-XboxApp.zip`
+Теперь убедитесь, что вы скачали правильный zip-файл для вашей платформы:
+- **Для Steam или Itch.io:** Скачайте `MalumMenu-VERSION-Steam-Itch.zip`
+- **Для Microsoft Store, Epic Games Store или Xbox App:** Скачайте `MalumMenu-VERSION-MicrosoftStore-EpicGames-XboxApp.zip`
 
-Make sure you followed the installation guide precisely. This is what your `Among Us` folder should look like after a successful installation:
+Убедитесь, что вы точно следовали руководству по установке. Вот как должна выглядеть ваша папка `Among Us` после успешной установки:
 
 <img src="https://scp222thj.dev/static/images/amongUsFolder.png" alt="drawing" width="550"/>
 
-<br>Some antiviruses might cause issues when installing the mod, so consider temporarily deactivating your antivirus if the game isn't booting after installation.
+<br>Некоторые антивирусы могут вызывать проблемы при установке мода, поэтому рассмотрите возможность временного отключения антивируса, если игра не запускается после установки.
 
-When installing MalumMenu for the first time, it will take **MUCH** longer than usual for the game to load. This is completely normal and expected behavior, so don't be alarmed if you have to wait a while. You can keep track of the installation progress through this useful BepInEx console window that pops up when you start the game:
+При первой установке MalumMenu загрузка игры займёт **НАМНОГО** больше времени, чем обычно. Это совершенно нормальное и ожидаемое поведение, так что не пугайтесь, если вам придётся подождать. Вы можете следить за ходом установки через это полезное окно консоли BepInEx, которое появляется при запуске игры:
 
 <img src="https://scp222thj.dev/static/images/bepinexConsole.png" alt="drawing" width="550"/>
 
-<br>If you are still having issues, feel free to open a new Github issue [here](https://github.com/scp222thj/MalumMenu/issues/new), or you can ask for help in our Discord server: [discord.gg/YYcYf88jAb](https://discord.gg/YYcYf88jAb)
+<br>Если у вас всё ещё возникают проблемы, не стесняйтесь открыть новую тему на Github [здесь](https://github.com/scp222thj/MalumMenu/issues/new), или вы можете попросить помощи на нашем Discord-сервере: [discord.gg/YYcYf88jAb](https://discord.gg/YYcYf88jAb)
 
 </details>
 
 <details>
 
-<summary><h2>👾 I found a bug OR I would like to suggest a new feature</h2></summary>
+<summary><h2>👾 Я нашёл баг ИЛИ хотел бы предложить новую функцию</h2></summary>
 
-To let me know, you can open a new Github issue [here](https://github.com/scp222thj/MalumMenu/issues/new), or you can discuss it on our Discord server: [discord.gg/YYcYf88jAb](https://discord.gg/YYcYf88jAb)
+Чтобы сообщить мне, вы можете открыть новую тему на Github [здесь](https://github.com/scp222thj/MalumMenu/issues/new), или вы можете обсудить это на нашем Discord-сервере: [discord.gg/YYcYf88jAb](https://discord.gg/YYcYf88jAb)
 
-If you want, you can also contribute to the project and implement the change yourself by making a pull request. All contributions are welcome!
+Если хотите, вы также можете внести вклад в проект и реализовать изменение самостоятельно, сделав pull request. Любые contributions приветствуются!
 
 </details>
 
 <details>
 
-<summary><h2>👨‍💻 I want to contribute to this project</h2></summary>
+<summary><h2>👨‍💻 Я хочу внести вклад в этот проект</h2></summary>
 
-To get started, I suggest you first learn about the basics of C# and Unity, since that's what Among Us is written in. There are plenty of tutorials out there to help you with that.
+Для начала я предлагаю вам изучить основы C# и Unity, поскольку именно на этом написан Among Us. В интернете есть множество руководств, которые помогут вам с этим.
 
-You should also learn about Github forking and pull requests, since you will need to use those to make any contributions to the project. [Here](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project) is the official documentation on the topic.
+Вам также следует узнать о форках Github и pull request'ах, так как они понадобятся вам для внесения любого вклада в проект. [Здесь](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project) официальная документация по этой теме.
 
-Then, I suggest you learn about Among Us modding in general. In this project, I use BepInEx and Harmony to patch the game, so I suggest you take a look at [this](https://docs.reactor.gg) great guide to learn how to work with those.
+Затем я предлагаю вам изучить моддинг Among Us в целом. В этом проекте я использую BepInEx и Harmony для патчинга игры, поэтому я предлагаю вам ознакомиться с [этим](https://docs.reactor.gg) отличным руководством, чтобы научиться работать с ними.
 
-Here are some other useful resources:
+Вот некоторые другие полезные ресурсы:
 
-- The [Reactor](https://reactor.gg/discord) discord server
-    - A great community of Among Us modders where you can ask questions and get help
-    - Here you can also find the most recent decompiled Among Us assemblies (the DLL files in `#resources` channel). I suggest using [dnSpy](https://github.com/dnSpy/dnSpy/releases/latest) to go through these.
+- Discord-сервер [Reactor](https://reactor.gg/discord)
+- Отличное сообщество моддеров Among Us, где вы можете задавать вопросы и получать помощь
+- Здесь вы также можете найти самые последние декомпилированные сборки Among Us (DLL-файлы в канале `#resources`). Я предлагаю использовать [dnSpy](https://github.com/dnSpy/dnSpy/releases/latest) для их просмотра.
 
 - [sus.wiki](https://github.com/roobscoob/among-us-protocol)
-    - Useful resource to learn more about the Among Us network protocol
-    - Keep in mind that it is slightly outdated
+- Полезный ресурс для изучения сетевого протокола Among Us
+- Имейте в виду, что он немного устарел
 
 </details>
 
-# ⚠️ Disclaimer
+# ⚠️ Дисклеймер
 
-This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
+Этот мод не связан с Among Us или Innersloth LLC, и содержащийся в нём контент не одобрен и не спонсирован Innersloth LLC. Части материалов, содержащихся здесь, являются собственностью Innersloth LLC. © Innersloth LLC.
 
-This mod is not intended to be used in any manner that interferes with Innersloth's services, Innersloth's operation of Among Us, the integrity or availability of the game, or the normal gameplay experience of other players. The creator does not endorse, encourage, or condone using this mod to disrupt games, negatively affect other users, bypass rules or protections, or gain an unfair advantage in any setting where such use is prohibited. Any misuse is solely the responsibility of the user.
+Этот мод не предназначен для использования каким-либо образом, который мешает сервисам Innersloth, работе Innersloth с Among Us, целостности или доступности игры, или нормальному игровому опыту других игроков. Создатель не одобряет, не поощряет и не поддерживает использование этого мода для срыва игр, негативного влияния на других пользователей, обхода правил или защит, или получения несправедливого преимущества в любых условиях, где такое использование запрещено. Любое неправильное использование является исключительной ответственностью пользователя.
 
-Usage of this mod can violate the terms of service of Among Us, which may lead to punitive action including temporary or permanent bans from the game. The creator is not responsible for any consequences you may face due to usage. Use at your own risk.
+Использование этого мода может нарушать условия обслуживания Among Us, что может привести к наказанию, включая временные или постоянные баны в игре. Создатель не несёт ответственности за любые последствия, с которыми вы можете столкнуться из-за использования. Используйте на свой страх и риск.
