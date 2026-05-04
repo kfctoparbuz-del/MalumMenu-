@@ -32,8 +32,8 @@ public static class PlayerPhysics_LateUpdate
         MalumPPMCheats.SetFakeAlivePPM();
         // MalumPPMCheats.ForceRolePPM();
 
-        // This check ensures there is only one run per frame
-        // so that OverloadHandler._timer progression remains accurate
+        // Эта проверка гарантирует, что выполняется только один запуск за кадр,
+        // чтобы прогресс OverloadHandler._timer оставался точным
         if (__instance.AmOwner)
         {
             OverloadHandler.Run();
@@ -42,11 +42,11 @@ public static class PlayerPhysics_LateUpdate
         TracersHandler.DrawPlayerTracer(__instance);
 
         GameObject[] bodyObjects = GameObject.FindGameObjectsWithTag("DeadBody");
-        foreach(GameObject bodyObject in bodyObjects) // Finds and loops through all dead bodies
+        foreach(GameObject bodyObject in bodyObjects) // Находит и перебирает все трупы
         {
             DeadBody deadBody = bodyObject.GetComponent<DeadBody>();
 
-            if (!deadBody || deadBody.Reported) continue;  // Only draw tracers for unreported dead bodies
+            if (!deadBody || deadBody.Reported) continue;  // Рисовать трассеры только для незаявленных трупов
             TracersHandler.DrawBodyTracer(deadBody);
         }
 
@@ -69,7 +69,7 @@ public static class PlayerPhysics_LateUpdate
 [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.HandleAnimation))]
 public static class PlayerPhysics_HandleAnimation
 {
-    // Prefix patch of PlayerPhysics.HandleAnimation to disable walking animation
+    // Префикс-патч PlayerPhysics.HandleAnimation для отключения анимации ходьбы
     public static bool Prefix(PlayerPhysics __instance)
     {
         if (CheatToggles.moonWalk && __instance.AmOwner)
