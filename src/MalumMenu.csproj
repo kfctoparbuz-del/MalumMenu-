@@ -5,8 +5,8 @@
         <DebugType>embedded</DebugType>
 
         <VersionPrefix>3.0.2</VersionPrefix>
-        <Description>all play and no cheats makes among us a dull game</Description>
-        <Authors>scp222thj, astra1dev</Authors>
+        <Description>MalumMenu Russian version</Description>
+        <Authors>Ernestrum</Authors>
     </PropertyGroup>
 
     <!--<ItemGroup>
