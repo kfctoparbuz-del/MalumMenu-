@@ -4,7 +4,7 @@ namespace MalumMenu;
 
 public class ConfigTab : ITab
 {
-    public string name => "Config";
+    public string name => "Конфигурация";
 
     public void Draw()
     {
@@ -17,12 +17,12 @@ public class ConfigTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.openConfig = GUILayout.Toggle(CheatToggles.openConfig, " Open Config");
+        CheatToggles.openConfig = GUILayout.Toggle(CheatToggles.openConfig, " Открыть конфиг");
 
-        CheatToggles.reloadConfig = GUILayout.Toggle(CheatToggles.reloadConfig, " Reload Config");
+        CheatToggles.reloadConfig = GUILayout.Toggle(CheatToggles.reloadConfig, " Сбросить конфиг");
 
-        CheatToggles.saveProfile = GUILayout.Toggle(CheatToggles.saveProfile, " Save to Profile");
+        CheatToggles.saveProfile = GUILayout.Toggle(CheatToggles.saveProfile, " Сохранить в профиль");
 
-        CheatToggles.loadProfile = GUILayout.Toggle(CheatToggles.loadProfile, " Load from Profile");
+        CheatToggles.loadProfile = GUILayout.Toggle(CheatToggles.loadProfile, " Загрузить из профиля");
     }
 }
