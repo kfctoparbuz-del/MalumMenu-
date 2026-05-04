@@ -5,10 +5,10 @@ namespace MalumMenu;
 
 public static class ArrowHandler
 {
-    // Cache for an arrow template GameObject to clone from
+    // Кэш для шаблонного GameObject стрелки для клонирования
     private static GameObject _cachedArrowTemplate;
 
-    // Determines if a task is owned by LocalPlayer and incomplete
+    // Определяет, принадлежит ли задача LocalPlayer и не завершена ли она
     public static bool IsOwnedAndIncomplete(NormalPlayerTask task)
     {
         if (task.Owner == null || !task.Owner.AmOwner) return false;
@@ -16,7 +16,7 @@ public static class ArrowHandler
         return !task.IsComplete;
     }
 
-    // Searches through task prefabs in ShipStatus to cache first arrow GameObject found
+    // Поиск в префабах задач в ShipStatus для кэширования первого найденного GameObject стрелки
     private static void CacheArrowFromShipStatus()
     {
         if (_cachedArrowTemplate != null) return;
@@ -35,43 +35,43 @@ public static class ArrowHandler
                 if (task.Arrow != null)
                 {
                     _cachedArrowTemplate = task.Arrow.gameObject;
-                    MalumMenu.Log.LogInfo($"Cached Arrow.gameObject for task {task.TaskType}");
+                    MalumMenu.Log.LogInfo($"Кэширован Arrow.gameObject для задачи {task.TaskType}");
                     return;
                 }
-                MalumMenu.Log.LogInfo($"No Arrow.gameObject found for task {task.TaskType}");
+                MalumMenu.Log.LogInfo($"Arrow.gameObject не найден для задачи {task.TaskType}");
             }
         }
     }
 
-    // Creates a new ArrowBehaviour for a task that doesn't have one
+    // Создаёт новый ArrowBehaviour для задачи, у которой его нет
     public static ArrowBehaviour CreateArrowForTask(NormalPlayerTask task)
     {
-        // Cache an arrow GameObject from ShipStatus task prefabs if its missing
+        // Кэширование GameObject стрелки из префабов задач ShipStatus, если его нет
         CacheArrowFromShipStatus();
 
-        // Set task.transform as parent of arrowObj so it gets destroyed with the task
+        // Установка task.transform как родителя arrowObj, чтобы он уничтожился вместе с задачей
         var arrowObj = Object.Instantiate(_cachedArrowTemplate, task.transform, false);
 
         return arrowObj.GetComponent<ArrowBehaviour>();
     }
 
-    // Ensures a task has an arrow, creating one if necessary
+    // Гарантирует, что у задачи есть стрелка, создавая её при необходимости
     public static void EnsureArrowExists(NormalPlayerTask task)
     {
-        // Only create arrows for owned, incomplete tasks that don't already have one
+        // Создавать стрелки только для принадлежащих, незавершённых задач, у которых ещё нет стрелки
         if (!IsOwnedAndIncomplete(task) || task.Arrow != null) return;
 
         task.Arrow = CreateArrowForTask(task);
     }
 
-    // Checks if a task needs special handling for arrow target setting
-    // Some tasks like ReplaceParts have logic that assumes taskStep > 0
+    // Проверяет, требует ли задача специальной обработки для установки цели стрелки
+    // Некоторые задачи, такие как ReplaceParts, имеют логику, предполагающую taskStep > 0
     public static bool NeedsSpecialTarget(NormalPlayerTask task)
     {
         return task.TaskType is TaskTypes.AlignEngineOutput or TaskTypes.ReplaceParts or TaskTypes.RoastMarshmallow or TaskTypes.StartFans or TaskTypes.PickUpTowels;
     }
 
-    // Sets the arrow target and StartAt room for a given task and console
+    // Устанавливает цель стрелки и комнату StartAt для данной задачи и консоли
     private static void SetArrowTarget(NormalPlayerTask task, Console targetConsole)
     {
         if (targetConsole == null) return;
@@ -80,15 +80,15 @@ public static class ArrowHandler
         task.StartAt = targetConsole.Room;
     }
 
-    // Sets the arrow target for tasks that have special logic at TaskStep == 0
-    // Targets each special task with case-specific logic
+    // Устанавливает цель стрелки для задач, имеющих специальную логику при TaskStep == 0
+    // Нацеливает каждую специальную задачу с логикой, зависящей от случая
     public static void SetArrowTargetForSpecialTasks(NormalPlayerTask task)
     {
         if (task.Arrow == null) return;
 
         switch (task.TaskType)
         {
-            // AlignEngineOutput: At step 0, always point arrow to the currently relevant console (Upper Engine panel)
+            // AlignEngineOutput: на шаге 0 всегда направлять стрелку на актуальную консоль (панель Upper Engine)
             case TaskTypes.AlignEngineOutput when task.TaskStep == 0:
             {
                 Il2CppSystem.Collections.Generic.List<Console> consoles = task.FindConsoles();
@@ -100,7 +100,7 @@ public static class ArrowHandler
 
                 break;
             }
-            // ReplaceParts: At step 0, always point arrow to the currently relevant console (Collect Parts panel)
+            // ReplaceParts: на шаге 0 всегда направлять стрелку на актуальную консоль (панель Collect Parts)
             case TaskTypes.ReplaceParts when task.taskStep == 0:
             {
                 Il2CppSystem.Collections.Generic.List<Console> consoles = NormalPlayerTask.PickRandomConsoles(0, TaskTypes.ReplaceParts);
@@ -113,7 +113,7 @@ public static class ArrowHandler
 
                 break;
             }
-            // RoastMarshmallow: At step 0, always point arrow to the currently relevant console (Collect Stick panel)
+            // RoastMarshmallow: на шаге 0 всегда направлять стрелку на актуальную консоль (панель Collect Stick)
             case TaskTypes.RoastMarshmallow when task.taskStep == 0:
             {
                 Il2CppSystem.Collections.Generic.List<Console> consoles = NormalPlayerTask.PickRandomConsoles(0, TaskTypes.RoastMarshmallow);
@@ -126,7 +126,7 @@ public static class ArrowHandler
 
                 break;
             }
-            // StartFans: At step 0, always point arrow to the currently relevant console (Reveal Code panel)
+            // StartFans: на шаге 0 всегда направлять стрелку на актуальную консоль (панель Reveal Code)
             case TaskTypes.StartFans when task.taskStep == 0:
             {
                 var targetConsole = task.FindSpecialConsole((Il2CppSystem.Func<Console, bool>)((Console c) => task.ValidConsole(c) && c.ConsoleId == 0));
@@ -134,7 +134,7 @@ public static class ArrowHandler
 
                 break;
             }
-            // PickUpTowels: At step 0, always point arrow to any valid towel location
+            // PickUpTowels: на шаге 0 всегда направлять стрелку на любую допустимую позицию полотенца
             case TaskTypes.PickUpTowels when task.TaskStep == 0:
             {
                 var targetConsole = task.FindSpecialConsole((Il2CppSystem.Func<Console, bool>)((Console c) => task.ValidConsole(c)));
