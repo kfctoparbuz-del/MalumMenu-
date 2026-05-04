@@ -58,7 +58,7 @@ public static class TrackerRole_FixedUpdate
 [HarmonyPatch(typeof(PhantomRole), nameof(PhantomRole.IsValidTarget))]
 public static class PhantomRole_IsValidTarget
 {
-    // Postfix patch of PhantomRole.IsValidTarget to allow killing while invisible
+    // Постфикс-патч PhantomRole.IsValidTarget для разрешения убийства в невидимости
     public static void Postfix(NetworkedPlayerInfo target, ref bool __result)
     {
         if (CheatToggles.killVanished)
@@ -71,8 +71,8 @@ public static class PhantomRole_IsValidTarget
 [HarmonyPatch(typeof(ImpostorRole), nameof(ImpostorRole.IsValidTarget))]
 public static class ImpostorRole_IsValidTarget
 {
-    // Postfix patch of ImpostorRole.IsValidTarget to allow forbidden kill targets for killAnyone cheat
-    // Allows killing ghosts (with seeGhosts), impostors, players in vents, etc...
+    // Постфикс-патч ImpostorRole.IsValidTarget для разрешения запрещённых целей для убийства при чите killAnyone
+    // Позволяет убивать призраков (с seeGhosts), самозванцев, игроков в вентиляции и т.д...
     public static void Postfix(NetworkedPlayerInfo target, ref bool __result)
     {
         if (CheatToggles.killAnyone)
@@ -85,7 +85,7 @@ public static class ImpostorRole_IsValidTarget
 [HarmonyPatch(typeof(ImpostorRole), nameof(ImpostorRole.FindClosestTarget))]
 public static class ImpostorRole_FindClosestTarget
 {
-    // Prefix patch of ImpostorRole.FindClosestTarget to allow for infinite kill reach
+    // Префикс-патч ImpostorRole.FindClosestTarget для бесконечной дальности убийства
     public static bool Prefix(ImpostorRole __instance, ref PlayerControl __result)
     {
         if (!CheatToggles.killReach) return true;
@@ -101,7 +101,7 @@ public static class ImpostorRole_FindClosestTarget
 [HarmonyPatch(typeof(DetectiveRole), nameof(DetectiveRole.FindClosestTarget))]
 public static class DetectiveRole_FindClosestTarget
 {
-    // Prefix patch of DetectiveRole.FindClosestTarget to allow for infinite interrogate reach
+    // Префикс-патч DetectiveRole.FindClosestTarget для бесконечной дальности допроса
     public static bool Prefix(DetectiveRole __instance, ref PlayerControl __result)
     {
         if (!CheatToggles.interrogateReach) return true;
@@ -117,7 +117,7 @@ public static class DetectiveRole_FindClosestTarget
 [HarmonyPatch(typeof(TrackerRole), nameof(TrackerRole.FindClosestTarget))]
 public static class TrackerRole_FindClosestTarget
 {
-    // Prefix patch of TrackerRole.FindClosestTarget to allow for infinite track reach
+    // Префикс-патч TrackerRole.FindClosestTarget для бесконечной дальности отслеживания
     public static bool Prefix(TrackerRole __instance, ref PlayerControl __result)
     {
         if (!CheatToggles.trackReach) return true;
