@@ -4,7 +4,7 @@ namespace MalumMenu;
 
 public class HostOnlyTab : ITab
 {
-    public string name => "Host-Only";
+    public string name => "Только для хоста";
 
     public void Draw()
     {
@@ -35,51 +35,51 @@ public class HostOnlyTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.killVanished = GUILayout.Toggle(CheatToggles.killVanished, " Kill While Vanished");
+        CheatToggles.killVanished = GUILayout.Toggle(CheatToggles.killVanished, " Убивать в невидимости");
 
-        CheatToggles.killAnyone = GUILayout.Toggle(CheatToggles.killAnyone, " Kill Anyone");
+        CheatToggles.killAnyone = GUILayout.Toggle(CheatToggles.killAnyone, " Убивать кого угодно");
 
-        CheatToggles.noKillCd = GUILayout.Toggle(CheatToggles.noKillCd, " No Kill Cooldown");
+        CheatToggles.noKillCd = GUILayout.Toggle(CheatToggles.noKillCd, " Без перезарядки убийства");
 
-        CheatToggles.showProtectMenu = GUILayout.Toggle(CheatToggles.showProtectMenu, " Show Protect Menu");
+        CheatToggles.showProtectMenu = GUILayout.Toggle(CheatToggles.showProtectMenu, " Показать меню защиты");
 
-        // CheatToggles.forceRole = GUILayout.Toggle(CheatToggles.forceRole, " Force Role");
+        // CheatToggles.forceRole = GUILayout.Toggle(CheatToggles.forceRole, " Принудительная роль");
 
-        // CheatToggles.noOptionsLimits = GUILayout.Toggle(CheatToggles.noOptionsLimits, " No Options Limits");
+        // CheatToggles.noOptionsLimits = GUILayout.Toggle(CheatToggles.noOptionsLimits, " Без ограничений опций");
     }
 
     private void DrawMurder()
     {
-        GUILayout.Label("Murder", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Убийство", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.killPlayer = GUILayout.Toggle(CheatToggles.killPlayer, " Kill Player");
+        CheatToggles.killPlayer = GUILayout.Toggle(CheatToggles.killPlayer, " Убить игрока");
 
-        CheatToggles.telekillPlayer = GUILayout.Toggle(CheatToggles.telekillPlayer, " Telekill Player");
+        CheatToggles.telekillPlayer = GUILayout.Toggle(CheatToggles.telekillPlayer, " Телекилл игрока");
 
-        CheatToggles.killAllCrew = GUILayout.Toggle(CheatToggles.killAllCrew, " Kill All Crewmates");
+        CheatToggles.killAllCrew = GUILayout.Toggle(CheatToggles.killAllCrew, " Убить всех членов экипажа");
 
-        CheatToggles.killAllImps = GUILayout.Toggle(CheatToggles.killAllImps, " Kill All Impostors");
+        CheatToggles.killAllImps = GUILayout.Toggle(CheatToggles.killAllImps, " Убить всех самозванцев");
 
-        CheatToggles.killAll = GUILayout.Toggle(CheatToggles.killAll, " Kill Everyone");
+        CheatToggles.killAll = GUILayout.Toggle(CheatToggles.killAll, " Убить всех");
     }
 
     private void DrawGameState()
     {
-        GUILayout.Label("Game State", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Состояние игры", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.forceStartGame = GUILayout.Toggle(CheatToggles.forceStartGame, " Force Start Game");
+        CheatToggles.forceStartGame = GUILayout.Toggle(CheatToggles.forceStartGame, " Принудительный запуск игры");
 
-        CheatToggles.noGameEnd = GUILayout.Toggle(CheatToggles.noGameEnd, " No Game End");
+        CheatToggles.noGameEnd = GUILayout.Toggle(CheatToggles.noGameEnd, " Без завершения игры");
     }
 
     private void DrawMeetings()
     {
-        GUILayout.Label("Meetings", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Собрания", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.skipMeeting = GUILayout.Toggle(CheatToggles.skipMeeting, " Skip Meeting");
+        CheatToggles.skipMeeting = GUILayout.Toggle(CheatToggles.skipMeeting, " Пропустить собрание");
 
-        CheatToggles.voteImmune = GUILayout.Toggle(CheatToggles.voteImmune, " Vote Immune");
+        CheatToggles.voteImmune = GUILayout.Toggle(CheatToggles.voteImmune, " Неуязвимость к голосованию");
 
-        CheatToggles.ejectPlayer = GUILayout.Toggle(CheatToggles.ejectPlayer, " Eject Player");
+        CheatToggles.ejectPlayer = GUILayout.Toggle(CheatToggles.ejectPlayer, " Выгнать игрока");
     }
 }
