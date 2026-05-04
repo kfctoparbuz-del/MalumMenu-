@@ -16,7 +16,7 @@ public class TasksUI : MonoBehaviour
 
     private void Start()
     {
-        // Instantiate 2D area of TasksUI
+        // Создание 2D области интерфейса задач
         _windowRect = new(
             Screen.width / 2f - windowWidth / 2f,
             Screen.height / 2f - windowHeight / 2f,
@@ -37,7 +37,7 @@ public class TasksUI : MonoBehaviour
 
         UIHelpers.ApplyUIColor();
 
-        _windowRect = GUI.Window((int)WindowId.TasksUI, _windowRect, (GUI.WindowFunction)TasksWindow, "Tasks");
+        _windowRect = GUI.Window((int)WindowId.TasksUI, _windowRect, (GUI.WindowFunction)TasksWindow, "Задачи");
     }
 
     private void TasksWindow(int windowID)
@@ -54,7 +54,7 @@ public class TasksUI : MonoBehaviour
 
             var nameKey = player.Data.PlayerName;
             _expandedPlayers.TryGetValue(nameKey, out var expanded);
-            var arrow = expanded ? "\u25BC" : "\u25B6"; // ▼ or ▶
+            var arrow = expanded ? "\u25BC" : "\u25B6"; // ▼ или ▶
 
             var taskCount = player.myTasks.Count;
             var completeCount = player.myTasks.ToArray().Count(t => t.IsComplete);
@@ -86,12 +86,12 @@ public class TasksUI : MonoBehaviour
 
                 foreach (var task in player.myTasks)
                 {
-                    // Do some checks to not show texts: sabotage active, dead hint, impostor hint
+                    // Несколько проверок, чтобы не показывать текст: активный саботаж, подсказка о смерти, подсказка самозванца
                     if (task.TaskType is TaskTypes.ResetReactor or TaskTypes.RestoreOxy or TaskTypes.FixLights or TaskTypes.FixComms or TaskTypes.ResetSeismic or TaskTypes.StopCharles or TaskTypes.MushroomMixupSabotage) continue;
 
                     _tasksString.Clear();
                     task.AppendTaskText(_tasksString);
-                    //_tasksString.Append($"Task Type: {task.TaskType.ToString()}");
+                    //_tasksString.Append($"Тип задачи: {task.TaskType.ToString()}");
                     var taskText = _tasksString.ToString();
 
                     if (taskText.Contains("You're dead") || taskText.Contains("Sabotage and kill")) continue;
@@ -102,13 +102,13 @@ public class TasksUI : MonoBehaviour
 
                     if (task.IsComplete)
                     {
-                        GUILayout.Label("<color=#00ff00>✔ Complete</color>");
+                        GUILayout.Label("<color=#00ff00>✔ Выполнено</color>");
                     }
                     else
                     {
                         if (player == PlayerControl.LocalPlayer)
                         {
-                            if (GUILayout.Button("Complete", GUIStylePreset.NormalButton))
+                            if (GUILayout.Button("Выполнить", GUIStylePreset.NormalButton))
                             {
                                 Utils.CompleteTask(task);
                             }
@@ -127,7 +127,7 @@ public class TasksUI : MonoBehaviour
 
         GUILayout.EndScrollView();
 
-        if (GUILayout.Button("Complete My Tasks", GUIStylePreset.NormalButton))
+        if (GUILayout.Button("Выполнить мои задачи", GUIStylePreset.NormalButton))
         {
             CheatToggles.completeMyTasks = true;
         }
