@@ -5,7 +5,7 @@ namespace MalumMenu;
 
 public class OverloadTab : ITab
 {
-    public string name => "Атака";
+    public string name => "Нагрузка";
 
     private GUIStyle _sliderSubtitle;
     private int _maxStrength = 1000;
@@ -51,14 +51,14 @@ public class OverloadTab : ITab
 
     private void DrawGeneral()
     {
-        CheatToggles.showOverload = GUILayout.Toggle(CheatToggles.showOverload, " Показать меню атаки");
+        CheatToggles.showOverload = GUILayout.Toggle(CheatToggles.showOverload, " Показать меню нагрузки");
     }
 
     private void DrawSettingsToggle()
     {
         GUILayout.Label("Настройки", GUIStylePreset.TabSubtitle);
 
-        CheatToggles.showOverloadSettings = GUILayout.Toggle(CheatToggles.showOverloadSettings, " Показать настройки атаки");
+        CheatToggles.showOverloadSettings = GUILayout.Toggle(CheatToggles.showOverloadSettings, " Показать настройки нагрузки");
     }
 
     private void DrawSettingsSection()
@@ -173,7 +173,7 @@ public class OverloadTab : ITab
 
         CheatToggles.olLogAddRemove = GUILayout.Toggle(CheatToggles.olLogAddRemove, " Логировать ДОБАВЛЕНИЕ и УДАЛЕНИЕ");
 
-        CheatToggles.olLogAttack = GUILayout.Toggle(CheatToggles.olLogAttack, " Логировать атаку");
+        CheatToggles.olLogAttack = GUILayout.Toggle(CheatToggles.olLogAttack, " Логировать нагрузку");
 
         CheatToggles.olLogDisconnect = GUILayout.Toggle(CheatToggles.olLogDisconnect, " Логировать отключение");
 
