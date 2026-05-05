@@ -217,11 +217,6 @@ public partial class MalumMenu : BasePlugin
                 {
                     Utils.ShowPopup("\nЭта версия MalumMenu и ваша версия Among Us несовместимы!\n\nУстановите правильную версию игры или MalumMenu для работы без ошибок.");
                 }
-
-                // Предупреждение о неофициальной версии (показывается каждый раз при загрузке главного меню)
-                Utils.ShowPopup("\n<size=150%><color=#FF0000>ВНИМАНИЕ</color></size>\n\n" +
-                                   "Данный проект является <color=#FFFF00>НЕОФИЦИАЛЬНЫМ</color>\n" +
-                                   "Официальный проект это <color=#00FF00>MalumMenu</color>");
             }
         }));
     }
