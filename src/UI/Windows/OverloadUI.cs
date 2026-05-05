@@ -448,7 +448,7 @@ public class OverloadUI : MonoBehaviour
             if (currentTargets.Count > 0)
             {
                 string pluralStr = currentTargets.Count != 1 ? "ей" : "ь";
-                middleStr = $"Атака {currentTargets.Count} цел{pluralStr}";
+                middleStr = $"Нагрузка {currentTargets.Count} цел{pluralStr}";
             }
             else
             {
