@@ -37,7 +37,7 @@ public class TasksUI : MonoBehaviour
 
         UIHelpers.ApplyUIColor();
 
-        _windowRect = GUI.Window((int)WindowId.TasksUI, _windowRect, (GUI.WindowFunction)TasksWindow, "Задачи");
+        _windowRect = GUI.Window((int)WindowId.TasksUI, _windowRect, (GUI.WindowFunction)TasksWindow, "Задание");
     }
 
     private void TasksWindow(int windowID)
@@ -127,7 +127,7 @@ public class TasksUI : MonoBehaviour
 
         GUILayout.EndScrollView();
 
-        if (GUILayout.Button("Выполнить таски", GUIStylePreset.NormalButton))
+        if (GUILayout.Button("Выполнить мои задание", GUIStylePreset.NormalButton))
         {
             CheatToggles.completeMyTasks = true;
         }
