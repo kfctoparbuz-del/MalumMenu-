@@ -58,7 +58,7 @@ public class RolesTab : ITab
 
     private void DrawImpostor()
     {
-        GUILayout.Label("Самозванец", GUIStylePreset.TabSubtitle);
+        GUILayout.Label("Предатель", GUIStylePreset.TabSubtitle);
 
         CheatToggles.killReach = GUILayout.Toggle(CheatToggles.killReach, " Дальность убийства");
 
